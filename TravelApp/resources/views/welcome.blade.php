@@ -80,20 +80,17 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+                <div class="title">
+                    Boise State Travel App
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="btn-group">
+                    <button class="btn btn-primary btn-lg" type="button" id="newRequest">Submit a new travel request</button>
+                    <button class="btn btn-primary btn-lg" type="button" id="seeTrips">See your trips</button>
+                    <button class="btn btn-primary btn-lg" type="button" id="reviewEdit">Review/Edit upcoming travel</button>
+                    <button class="btn btn-primary btn-lg" type="button" id="enterInfo">Enter info while traveling</button>
                 </div>
+
             </div>
         </div>
     </body>

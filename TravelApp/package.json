@@ -16,6 +16,13 @@
         "lodash": "^4.17.13",
         "resolve-url-loader": "^2.3.1",
         "sass": "^1.15.2",
-        "sass-loader": "^7.1.0"
+        "sass-loader": "^7.1.0",
+        "vue-template-compiler": "^2.6.10"
+    },
+    "dependencies": {
+        "bourbon": "^6.0.0",
+        "gulp": "^4.0.2",
+        "gulp-sass": "^4.0.2",
+        "node-bourbon": "^4.2.8"
     }
 }
