@@ -3,9 +3,16 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        @include('includes.head')
+        <title>Boise State Travel App</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
-        <title>Laravel</title>
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
@@ -46,6 +53,7 @@
 
             .title {
                 font-size: 84px;
+                color: #0033a0;
             }
 
             .links > a {
@@ -57,41 +65,37 @@
                 text-decoration: none;
                 text-transform: uppercase;
             }
-
-            .m-b-md {
-                margin-bottom: 30px;
+            .blue {
+                background-color: #0033a0;
+                border-color: #d64309;
+            }
+            .orange-inactive {
+                background-color: #d64309;
+                opacity: 0.5;
+                border-color: #0033a0;
+                color: #0033a0;
+            }
+            .orange {
+                background-color: #d64309;
             }
         </style>
     </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+{{--    <header>--}}
+{{--        @include('includes.header')--}}
+{{--    </header>--}}
+    <body class="flex-center position-ref">
+            <div class="container content">
+                <div class="row">
+                    <div class="title">Boise State Travel App</div><br><br><br>
                 </div>
-            @endif
-
-            <div class="content">
-                <div class="title">
-                    Boise State Travel App
+                <div class="row">
+                    <a href="{{ url('/authorization/') }}" class="col-sm-6 btn btn-primary btn-lg blue" type="button" id="newRequest">Submit a new travel request</a>
+                    <button class="col-sm-6 btn btn-primary btn-lg orange-inactive" type="button" id="seeTrips">See your trips</button>
                 </div>
-
-                <div class="btn-group">
-                    <button class="btn btn-primary btn-lg" type="button" id="newRequest">Submit a new travel request</button>
-                    <button class="btn btn-primary btn-lg" type="button" id="seeTrips">See your trips</button>
-                    <button class="btn btn-primary btn-lg" type="button" id="reviewEdit">Review/Edit upcoming travel</button>
-                    <button class="btn btn-primary btn-lg" type="button" id="enterInfo">Enter info while traveling</button>
+                <div class="row">
+                <button class="col-sm-6 btn btn-primary btn-lg orange-inactive" type="button" id="reviewEdit">Review/Edit upcoming travel</button>
+                <button class="col-sm-6 btn btn-primary btn-lg orange-inactive" type="button" id="enterInfo">Enter info while traveling</button>
                 </div>
-
             </div>
-        </div>
     </body>
 </html>
