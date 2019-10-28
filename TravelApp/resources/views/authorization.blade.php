@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Bootstrap Example</title>
+    <title>Authorization Page</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -19,7 +19,7 @@
 <body>
 <div class="bootsrap-iso container">
     <h2>BSU Travel Authorization Request Form</h2>
-    <form>
+    <form action="" methond="post">
 {{--        Row 1--}}
         <h3><i class="glyphicon glyphicon-user"></i>  Traveler's Information</h3>
         <p>Please review the <a href="https://www.boisestate.edu/policy/finance/policy-title-travel/">Travel Policy #6180</a> for more information.</p>
@@ -93,11 +93,18 @@
             </div>
             </div></div>
         <div class="row">
-            <button type="submit" class="btn btn-default blue col-sm-4">Submit</button>
+            <button type="submit" class="btn btn-default blue col-sm-4" value="submit">Submit</button>
         </div>
     </form>
 </div>
 </body>
+<?php
+if(isset($_POST['submit'])){
+    $msg="test email";
+    mail("jtsmithers@gmail.com", "Test Subject", $msg);
+    }
+?>
+
 <script>
     $(document).ready(function(){
         var date_input=$('input[name="date"]'); //our date input has the name "date"
