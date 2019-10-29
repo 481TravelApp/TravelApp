@@ -45,8 +45,8 @@
 {{--        Row 3--}}
         <div class="row">
             <div class="form-group col-sm-6">
-                <label for="empID">Traveler's Location:</label>
-                <input type="text" class="form-control" id="empID" placeholder="City, State, Country">
+                <label for="empLoc">Traveler's Location:</label>
+                <input type="text" class="form-control" id="empLoc" placeholder="City, State, Country">
 {{--                <label>City, State, Country</label>--}}
             </div>
             <div class="form-group col-sm-6">
@@ -76,20 +76,20 @@
             <div class="form-group col-sm-12">
             <label class="control-label" for="personalBusiness">Is personal travel scheduled in conjunction with business travel? *</label>
             <div class="radio">
-                <label><input type="radio" name="optradio" checked>Yes</label>
+                <label><input type="radio" name="optradio1">Yes</label>
             </div>
             <div class="radio">
-                <label><input type="radio" name="optradio">No</label>
+                <label><input type="radio" name="optradio2">No</label>
             </div>
         </div></div>
         <div class="row">
             <div class="form-group col-sm-12">
             <label class="control-label" for="busChoice">Who will pay travel costs? *</label>
             <div class="radio">
-                <label><input type="radio" name="optradio">University: Responsible in part or whole for the employee travel cost.</label>
+                <label><input type="radio" name="optradio3">University: Responsible in part or whole for the employee travel cost.</label>
             </div>
             <div class="radio">
-                <label><input type="radio" name="optradio">Third Party: Responsible in whole for the employee travel cost, also known as, "No cost travel."</label>
+                <label><input type="radio" name="optradio4">Third Party: Responsible in whole for the employee travel cost, also known as, "No cost travel."</label>
             </div>
             </div></div>
         <div class="row">

@@ -54,6 +54,7 @@
             .title {
                 font-size: 84px;
                 color: #0033a0;
+                font-weight: bolder;
             }
 
             .links > a {
@@ -71,20 +72,34 @@
             }
             .orange-inactive {
                 background-color: #d64309;
-                opacity: 0.5;
+                opacity: 0.7;
                 border-color: #0033a0;
                 color: #0033a0;
             }
             .orange {
                 background-color: #d64309;
             }
+            .background {
+                background-image: url('/images/bsu_logo.png');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position-x: 50%;
+                background-position-y: 20%;
+                background-size: auto;
+                background-color: rgba(255, 255, 255, 0.4);
+                background-blend-mode: lighten;
+            }
         </style>
     </head>
-{{--    <header>--}}
-{{--        @include('includes.header')--}}
-{{--    </header>--}}
-    <body class="flex-center position-ref">
+    <header>
+        @include('includes.header')
+    </header>
+    <body class="flex-center position-ref background">
+{{--            <div>--}}
+{{--                <img src="{{URL('/images/bsu_logo.png')}}" alt="bsu logo" style="max-width: 400px; top: 0; left: 0; opacity: .3; background-position: center; position: ; z-index: 1;">--}}
+{{--            </div>--}}
             <div class="container content">
+
                 <div class="row">
                     <div class="title">Boise State Travel App</div><br><br><br>
                 </div>
