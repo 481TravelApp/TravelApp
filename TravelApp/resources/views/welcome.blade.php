@@ -49,6 +49,7 @@
 
             .content {
                 text-align: center;
+                font-weight: 400;
             }
 
             .title {
@@ -84,10 +85,13 @@
                 background-repeat: no-repeat;
                 background-attachment: fixed;
                 background-position-x: 50%;
-                background-position-y: 20%;
+                background-position-y: 10%;
                 background-size: auto;
-                background-color: rgba(255, 255, 255, 0.4);
-                background-blend-mode: lighten;
+                background-color: rgba(255, 255, 255, 0.5);
+                background-blend-mode: color-dodge;
+            }
+            .btn {
+                margin-top: 10px;
             }
         </style>
     </head>
@@ -104,17 +108,21 @@
                     <div class="title">Boise State Travel App</div><br><br><br>
                 </div>
                 <div class="row">
-                    <a href="{{ url('/authorization/') }}" class="col-sm-6 btn btn-primary btn-lg blue" type="button" id="newRequest">Submit a new travel request</a>
-                    <button class="col-sm-6 btn btn-secondary btn-lg orange-inactive" type="button" id="seeTrips" data-toggle="modal" data-target="#TripModal">
+                    <a href="{{ url('/authorization/') }}" class="col-sm-6 col-sm-offset-3 btn btn-primary btn-lg blue" type="button" id="newRequest">Submit a new travel request</a>
+                </div>
+                <div class="row">
+                    <button class="col-sm-6 col-sm-offset-3 btn btn-secondary btn-lg orange-inactive" type="button" id="seeTrips" data-toggle="modal" data-target="#TripModal">
                         See your trips
 {{--                        <span class="tooltiptext">Here you will be able to see your previous and current trips, view itinerary, and other trip information</span>--}}
                     </button>
                 </div>
                 <div class="row">
-                <button class="col-sm-6 btn btn-secondary btn-lg orange-inactive" type="button" id="reviewEdit" data-toggle="modal" data-target="#ReviewModal">
+                <button class="col-sm-6 col-sm-offset-3 btn btn-secondary btn-lg orange-inactive" type="button" id="reviewEdit" data-toggle="modal" data-target="#ReviewModal">
                     Review/Edit upcoming travel
                 </button>
-                <button class="col-sm-6 btn btn-outline-secondary btn-lg orange-inactive" type="button" id="enterInfo" data-toggle="modal" data-target="#ReportModal">
+                </div>
+                <div class="row">
+                <button class="col-sm-6 col-sm-offset-3 btn btn-secondary btn-lg orange-inactive" type="button" id="enterInfo" data-toggle="modal" data-target="#ReportModal">
                     Enter info while traveling
                 </button>
                 </div>
