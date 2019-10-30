@@ -55,7 +55,7 @@
             .title {
                 font-size: 84px;
                 color: #0033a0;
-                font-weight: bolder;
+                /*font-weight: bolder;*/
             }
 
             .links > a {
@@ -87,11 +87,15 @@
                 background-position-x: 50%;
                 background-position-y: 10%;
                 background-size: auto;
-                background-color: rgba(255, 255, 255, 0.5);
+                background-color: rgba(255, 255, 255, 0.7);
                 background-blend-mode: color-dodge;
             }
             .btn {
                 margin-top: 10px;
+            }
+            .btn-secondary{
+                font-weight: 500;
+                font-weight: bolder;
             }
         </style>
     </head>
