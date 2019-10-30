@@ -22,7 +22,7 @@
                 background-color: #fff;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
-                font-weight: 200;
+                font-weight: 300;
                 height: 100vh;
                 margin: 0;
             }
@@ -72,7 +72,7 @@
             }
             .orange-inactive {
                 background-color: #d64309;
-                opacity: 0.7;
+                opacity: 0.85;
                 border-color: #0033a0;
                 color: #0033a0;
             }
@@ -105,11 +105,80 @@
                 </div>
                 <div class="row">
                     <a href="{{ url('/authorization/') }}" class="col-sm-6 btn btn-primary btn-lg blue" type="button" id="newRequest">Submit a new travel request</a>
-                    <button class="col-sm-6 btn btn-primary btn-lg orange-inactive" type="button" id="seeTrips">See your trips</button>
+                    <button class="col-sm-6 btn btn-secondary btn-lg orange-inactive" type="button" id="seeTrips" data-toggle="modal" data-target="#TripModal">
+                        See your trips
+{{--                        <span class="tooltiptext">Here you will be able to see your previous and current trips, view itinerary, and other trip information</span>--}}
+                    </button>
                 </div>
                 <div class="row">
-                <button class="col-sm-6 btn btn-primary btn-lg orange-inactive" type="button" id="reviewEdit">Review/Edit upcoming travel</button>
-                <button class="col-sm-6 btn btn-primary btn-lg orange-inactive" type="button" id="enterInfo">Enter info while traveling</button>
+                <button class="col-sm-6 btn btn-secondary btn-lg orange-inactive" type="button" id="reviewEdit" data-toggle="modal" data-target="#ReviewModal">
+                    Review/Edit upcoming travel
+                </button>
+                <button class="col-sm-6 btn btn-outline-secondary btn-lg orange-inactive" type="button" id="enterInfo" data-toggle="modal" data-target="#ReportModal">
+                    Enter info while traveling
+                </button>
+                </div>
+                {{--                See Your Trips Modal--}}
+                <div class="modal fade" id="TripModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">COMING SOON!! See Your Trips</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Here you will be able to see your previous and current trips, view itinerary, and other trip information!
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                {{--                                <button type="button" class="btn btn-primary">Save changes</button>--}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{--                Review/Edit Upcoming Travel Modal--}}
+                <div class="modal fade" id="ReviewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">COMING SOON!! Review/Edit Upcoming Travel</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Here you will be able to view and edit upcoming trips that you have planned. Trip information will be available for
+                                your reference and you will be able to make changes and submit for approval.
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                {{--                                <button type="button" class="btn btn-primary">Save changes</button>--}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{--                Report Modal--}}
+                <div class="modal fade" id="ReportModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">COMING SOON!! Enter Info While Traveling</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Here you will be able to enter information about your travel. Track expenses, log meals, and make note of any
+                                information that is required for reporting.
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                {{--                                <button type="button" class="btn btn-primary">Save changes</button>--}}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
     </body>
