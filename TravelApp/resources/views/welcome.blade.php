@@ -15,14 +15,16 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 
         <!-- Styles -->
         <style>
             html, body {
                 background-color: #fff;
                 color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 300;
+                /*font-family: 'Nunito', sans-serif;*/
+                font-family: 'Source Sans Pro', sans-serif;
+                /*font-weight: 300;*/
                 height: 100vh;
                 margin: 0;
             }
@@ -53,7 +55,7 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 6vw;
                 color: #0033a0;
                 /*font-weight: bolder;*/
             }
@@ -86,15 +88,17 @@
                 background-attachment: fixed;
                 background-position-x: 50%;
                 background-position-y: 10%;
-                background-size: auto;
+                background-size: 30%;
                 background-color: rgba(255, 255, 255, 0.7);
                 background-blend-mode: color-dodge;
             }
             .btn {
                 margin-top: 10px;
+                font-size: 2vw;
             }
+            .btn
             .btn-secondary{
-                font-weight: 500;
+                /*font-weight: 500;*/
                 font-weight: bolder;
             }
         </style>
@@ -112,26 +116,26 @@
                     <div class="title">Boise State Travel App</div><br><br><br>
                 </div>
                 <div class="row">
-                    <a href="{{ url('/authorization/') }}" class="col-sm-6 col-sm-offset-3 btn btn-primary btn-lg blue" type="button" id="newRequest">Submit a new travel request</a>
+                    <a href="{{ url('/authorization/') }}" class="col-xs-8 col-xs-offset-2 btn btn-primary btn-lg blue" type="button" id="newRequest">Submit a new travel request</a>
                 </div>
                 <div class="row">
-                    <button class="col-sm-6 col-sm-offset-3 btn btn-secondary btn-lg orange-inactive" type="button" id="seeTrips" data-toggle="modal" data-target="#TripModal">
+                    <button class="col-xs-8 col-xs-offset-2 btn btn-secondary btn-lg orange-inactive" type="button" id="seeTrips" data-toggle="modal" data-target="#TripModal">
                         See your trips
 {{--                        <span class="tooltiptext">Here you will be able to see your previous and current trips, view itinerary, and other trip information</span>--}}
                     </button>
                 </div>
                 <div class="row">
-                <button class="col-sm-6 col-sm-offset-3 btn btn-secondary btn-lg orange-inactive" type="button" id="reviewEdit" data-toggle="modal" data-target="#ReviewModal">
+                <button class="col-xs-8 col-xs-offset-2 btn btn-secondary btn-lg orange-inactive" type="button" id="reviewEdit" data-toggle="modal" data-target="#ReviewModal">
                     Review/Edit upcoming travel
                 </button>
                 </div>
                 <div class="row">
-                <button class="col-sm-6 col-sm-offset-3 btn btn-secondary btn-lg orange-inactive" type="button" id="enterInfo" data-toggle="modal" data-target="#ReportModal">
+                <button class="col-xs-8 col-xs-offset-2 btn btn-secondary btn-lg orange-inactive" type="button" id="enterInfo" data-toggle="modal" data-target="#ReportModal">
                     Enter info while traveling
                 </button>
                 </div>
                 {{--                See Your Trips Modal--}}
-                <div class="modal fade" id="TripModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade " id="TripModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">

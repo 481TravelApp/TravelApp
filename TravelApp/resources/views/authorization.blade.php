@@ -93,15 +93,19 @@
             </div>
             </div></div>
         <div class="row">
-            <button type="submit" class="btn btn-default blue col-sm-4" value="submit">Submit</button>
+            <button type="submit" name="submit" class="btn btn-default blue col-sm-4" value="submit">Submit</button>
         </div>
     </form>
 </div>
 </body>
 <?php
 if(isset($_POST['submit'])){
-    $msg="test email";
-    mail("jtsmithers@gmail.com", "Test Subject", $msg);
+    console.log("yo");
+    $to = "jason.smith@u.boisestate.edu@";
+    $subject = "My subject";
+    $txt = "Hello world!";
+    $headers = "From: do_not_reply@boisestate.edu" . "\r\n" . "CC: nathandsteele@gmail.com";
+    ​mail($to,$subject,$txt,$headers);
     }
 ?>
 
