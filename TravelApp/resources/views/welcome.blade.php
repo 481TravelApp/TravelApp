@@ -79,8 +79,42 @@
                 border-color: #0033a0;
                 color: #0033a0;
             }
+            .modal-footer {
+                text-align: center;
+                border: none;
+            }
+            .modal-body {
+                font-size: 2vh;
+            }
+            .modal-dialog {
+                width: 80%;
+                margin: 30px auto;
+                padding: 15%;
+            }
+            .modal-header {
+                border: none;
+            }
+            .modal-content {
+                position: relative;
+                background-color: #fff;
+                background-clip: padding-box;
+                border: 1px solid #999;
+                border: 1px solid rgba(0,0,0,.2);
+                border-radius: 6px;
+                -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.5);
+                box-shadow: 0 3px 9px rgba(0,0,0,.5);
+                outline: 0;
+                height: 300px;
+            }
+            .modal-title {
+                font-size: 3vh;
+            }
             .orange {
-                background-color: #d64309;
+                /*background-color: #d64309;*/
+                background-color: white;
+                opacity: .95;
+                border-color: #0033a0;
+                color: #0033a0;
             }
             .background {
                 background-image: url('/images/bsu_logo.png');
@@ -100,6 +134,9 @@
             .btn-secondary{
                 /*font-weight: 500;*/
                 font-weight: bolder;
+            }
+            .mbtn {
+                width: 50%;
             }
         </style>
     </head>
@@ -135,9 +172,9 @@
                 </button>
                 </div>
                 {{--                See Your Trips Modal--}}
-                <div class="modal fade " id="TripModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="TripModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
-                        <div class="modal-content">
+                        <div class="modal-content orange">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">COMING SOON!! See Your Trips</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -148,7 +185,7 @@
                                 Here you will be able to see your previous and current trips, view itinerary, and other trip information!
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary mbtn" data-dismiss="modal">Close</button>
                                 {{--                                <button type="button" class="btn btn-primary">Save changes</button>--}}
                             </div>
                         </div>
@@ -157,7 +194,7 @@
                 {{--                Review/Edit Upcoming Travel Modal--}}
                 <div class="modal fade" id="ReviewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
-                        <div class="modal-content">
+                        <div class="modal-content orange">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">COMING SOON!! Review/Edit Upcoming Travel</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -169,7 +206,7 @@
                                 your reference and you will be able to make changes and submit for approval.
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary mbtn" data-dismiss="modal">Close</button>
                                 {{--                                <button type="button" class="btn btn-primary">Save changes</button>--}}
                             </div>
                         </div>
@@ -178,7 +215,7 @@
                 {{--                Report Modal--}}
                 <div class="modal fade" id="ReportModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
-                        <div class="modal-content">
+                        <div class="modal-content orange">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">COMING SOON!! Enter Info While Traveling</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -190,7 +227,7 @@
                                 information that is required for reporting.
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary mbtn" data-dismiss="modal">Close</button>
                                 {{--                                <button type="button" class="btn btn-primary">Save changes</button>--}}
                             </div>
                         </div>
