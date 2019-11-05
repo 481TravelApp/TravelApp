@@ -75,22 +75,46 @@
         <div class="row">
             <div class="form-group col-sm-12">
             <label class="control-label" for="personalBusiness">Is personal travel scheduled in conjunction with business travel? *</label>
-            <div class="radio">
-                <label><input type="radio" name="optradio1">Yes</label>
-            </div>
-            <div class="radio">
-                <label><input type="radio" name="optradio2">No</label>
-            </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="personal/businessRadios" id="exampleRadios1" value="option1" checked>
+                    <label class="form-check-label" for="exampleRadios1">
+                        Yes
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="personal/businessRadios" id="exampleRadios2" value="option2">
+                    <label class="form-check-label" for="exampleRadios2">
+                        No
+                    </label>
+                </div>
+{{--            <div class="radio">--}}
+{{--                <label><input type="radio" name="optradio1" checked>Yes</label>--}}
+{{--            </div>--}}
+{{--            <div class="radio">--}}
+{{--                <label><input type="radio" name="optradio2">No</label>--}}
+{{--            </div>--}}
         </div></div>
         <div class="row">
             <div class="form-group col-sm-12">
             <label class="control-label" for="busChoice">Who will pay travel costs? *</label>
-            <div class="radio">
-                <label><input type="radio" name="optradio3">University: Responsible in part or whole for the employee travel cost.</label>
-            </div>
-            <div class="radio">
-                <label><input type="radio" name="optradio4">Third Party: Responsible in whole for the employee travel cost, also known as, "No cost travel."</label>
-            </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="travelCostRadios" id="exampleRadios1" value="option1" checked>
+                    <label class="form-check-label" for="exampleRadios1">
+                        University: Responsible in part or whole for the employee travel cost.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="travelCostRadios" id="exampleRadios2" value="option2">
+                    <label class="form-check-label" for="exampleRadios2">
+                        Third Party: Responsible in whole for the employee travel cost, also known as, "No cost travel.
+                    </label>
+                </div>
+{{--            <div class="radio">--}}
+{{--                <label><input type="radio" name="optradio3" checked>University: Responsible in part or whole for the employee travel cost.</label>--}}
+{{--            </div>--}}
+{{--            <div class="radio">--}}
+{{--                <label><input type="radio" name="optradio4">Third Party: Responsible in whole for the employee travel cost, also known as, "No cost travel."</label>--}}
+{{--            </div>--}}
             </div></div>
         <div class="row">
             <button type="submit" name="submit" class="btn btn-default blue col-sm-4" value="submit">Submit</button>
