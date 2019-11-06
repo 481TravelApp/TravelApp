@@ -87,12 +87,6 @@
                         No
                     </label>
                 </div>
-{{--            <div class="radio">--}}
-{{--                <label><input type="radio" name="optradio1" checked>Yes</label>--}}
-{{--            </div>--}}
-{{--            <div class="radio">--}}
-{{--                <label><input type="radio" name="optradio2">No</label>--}}
-{{--            </div>--}}
         </div></div>
         <div class="row">
             <div class="form-group col-sm-12">
@@ -109,15 +103,10 @@
                         Third Party: Responsible in whole for the employee travel cost, also known as, "No cost travel.
                     </label>
                 </div>
-{{--            <div class="radio">--}}
-{{--                <label><input type="radio" name="optradio3" checked>University: Responsible in part or whole for the employee travel cost.</label>--}}
-{{--            </div>--}}
-{{--            <div class="radio">--}}
-{{--                <label><input type="radio" name="optradio4">Third Party: Responsible in whole for the employee travel cost, also known as, "No cost travel."</label>--}}
-{{--            </div>--}}
             </div></div>
         <div class="row">
-            <button type="submit" name="submit" class="btn btn-default blue col-sm-4" value="submit">Submit</button>
+{{--            <button type="submit" name="submit" class="btn btn-default blue col-sm-4" value="submit">Submit</button>--}}
+            <a href="{{ url('/welcome/') }}" class="col btn btn-primary btn-lg blue" type="button" id="newRequest">Submit</a>
         </div>
     </form>
 </div>
