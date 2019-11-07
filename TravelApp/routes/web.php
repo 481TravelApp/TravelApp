@@ -20,7 +20,10 @@ Auth::routes();
 //Route::get('/home', 'HomeController@index')->name('home');
 //
 //Auth::routes();
-
+Route::get('/welcome', function()
+{
+    return View::make('welcome');
+});
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/authorization', function()
 {

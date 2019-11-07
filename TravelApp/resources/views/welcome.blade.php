@@ -89,7 +89,9 @@
             .modal-dialog {
                 width: 80%;
                 margin: 30px auto;
-                padding: 15%;
+                padding: 10%;
+                min-width: 250px;
+                margin-top: 15%;
             }
             .modal-header {
                 border: none;
@@ -104,7 +106,7 @@
                 -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.5);
                 box-shadow: 0 3px 9px rgba(0,0,0,.5);
                 outline: 0;
-                height: 300px;
+                height: 50%;
             }
             .modal-title {
                 font-size: 3vh;
@@ -138,6 +140,10 @@
             .mbtn {
                 width: 50%;
             }
+            .col {
+                min-width: 300px;
+                width: 70%;
+            }
         </style>
     </head>
     <header>
@@ -153,21 +159,21 @@
                     <div class="title">Boise State Travel App</div><br><br><br>
                 </div>
                 <div class="row">
-                    <a href="{{ url('/authorization/') }}" class="col-xs-8 col-xs-offset-2 btn btn-primary btn-lg blue" type="button" id="newRequest">Submit a new travel request</a>
+                    <a href="{{ url('/authorization/') }}" class="col btn btn-primary btn-lg blue" type="button" id="newRequest">Submit a new travel request</a>
                 </div>
                 <div class="row">
-                    <button class="col-xs-8 col-xs-offset-2 btn btn-secondary btn-lg orange-inactive" type="button" id="seeTrips" data-toggle="modal" data-target="#TripModal">
+                    <button class="col btn btn-secondary btn-lg orange-inactive" type="button" id="seeTrips" data-toggle="modal" data-target="#TripModal">
                         See your trips
 {{--                        <span class="tooltiptext">Here you will be able to see your previous and current trips, view itinerary, and other trip information</span>--}}
                     </button>
                 </div>
                 <div class="row">
-                <button class="col-xs-8 col-xs-offset-2 btn btn-secondary btn-lg orange-inactive" type="button" id="reviewEdit" data-toggle="modal" data-target="#ReviewModal">
+                <button class="col btn btn-secondary btn-lg orange-inactive" type="button" id="reviewEdit" data-toggle="modal" data-target="#ReviewModal">
                     Review/Edit upcoming travel
                 </button>
                 </div>
                 <div class="row">
-                <button class="col-xs-8 col-xs-offset-2 btn btn-secondary btn-lg orange-inactive" type="button" id="enterInfo" data-toggle="modal" data-target="#ReportModal">
+                <button class="col btn btn-secondary btn-lg orange-inactive" type="button" id="enterInfo" data-toggle="modal" data-target="#ReportModal">
                     Enter info while traveling
                 </button>
                 </div>
@@ -176,7 +182,8 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content orange">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">COMING SOON!! See Your Trips</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">COMING SOON!!</h5>
+                                <h3>See Your Trips</h3>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -196,7 +203,8 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content orange">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">COMING SOON!! Review/Edit Upcoming Travel</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">COMING SOON!!</h5>
+                                <h3>Review/Edit Upcoming Travel</h3>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -217,7 +225,8 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content orange">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">COMING SOON!! Enter Info While Traveling</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">COMING SOON!!</h5>
+                                <h3>Enter Info While Traveling</h3>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
