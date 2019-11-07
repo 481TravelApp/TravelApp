@@ -13,7 +13,8 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    //'name' => env('APP_NAME', 'BSU Travel App'),
+    'name' => 'Boise State University Travel App',
 
     /*
     |--------------------------------------------------------------------------
