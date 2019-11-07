@@ -4984,6 +4984,10 @@ input[type="button"].btn-block {
   color: #fff;
 }
 
+.navbar-img {
+    width: 65px;
+}
+
 .card {
   position: relative;
   display: -webkit-box;
