@@ -91,7 +91,7 @@
                 margin: 30px auto;
                 padding: 10%;
                 min-width: 250px;
-                margin-top: 15%;
+                /*margin-top: 15%;*/
             }
             .modal-header {
                 border: none;

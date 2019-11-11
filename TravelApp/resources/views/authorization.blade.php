@@ -1,3 +1,30 @@
+<?php
+////if(isset($_POST['submit'])){
+////    console.log("yo");
+////    $to = "jasonsmith7@u.boisestate.edu@";
+////    $subject = "My subject";
+////    $txt = "Hello world!";
+////    $headers = "From: do_not_reply@boisestate.edu" . "\r\n" . "CC: nathandsteele@gmail.com";
+////    ​mail($to,$subject,$txt,$headers);
+////    }
+////
+//
+//if(isset($_POST['submit']))
+//{
+//    $to      = 'jtsmithers@gmail.com';
+//    $subject = 'the subject';
+//    $message = 'hello';
+//    $headers = 'From: do_not_reply@boisestate.edu' . "\r\n" .
+//        'Reply-To: do_not_reply@boisestate.edu' . "\r\n" .
+//        'X-Mailer: PHP/' . phpversion();
+//
+//    mail($to, $subject, $message, $headers);
+//
+//    echo 'Email Sent.';
+//}
+//
+//?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,15 +40,30 @@
         .blue {
             background-color: #0033a0;
             color: white;
-    }
+        }
+        .green {
+            background-color: #4bb543;
+            color: white;
+        }
+        .background-auth {
+            background-image: url('/images/bsu_logo.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position-x: 50%;
+            background-position-y: 50%;
+            background-size: 50%;
+            background-color: rgba(255, 255, 255, 0.9);
+            background-blend-mode: color-dodge;
+        }
     </style>
 </head>
-<body>
+<body class="background-auth">
 <div class="bootsrap-iso container">
     <h2>BSU Travel Authorization Request Form</h2>
-    <form action="" methond="post">
+    <form action="" method="post">
+        @csrf
 {{--        Row 1--}}
-        <h3><i class="glyphicon glyphicon-user"></i>  Traveler's Information</h3>
+        <h3><i class="glyphicon glyphicon-user"></i>Traveler's Information</h3>
         <p>Please review the <a href="https://www.boisestate.edu/policy/finance/policy-title-travel/">Travel Policy #6180</a> for more information.</p>
         <div class="row">
             <div class="form-group col-sm-6">
@@ -105,22 +147,34 @@
                 </div>
             </div></div>
         <div class="row">
-{{--            <button type="submit" name="submit" class="btn btn-default blue col-sm-4" value="submit">Submit</button>--}}
-            <a href="{{ url('/welcome/') }}" class="col btn btn-primary btn-lg blue" type="button" id="newRequest">Submit</a>
+            <button type="submit" name="submit" id="submit" class="btn btn-default blue col-sm-4" value="submit" data-toggle="modal" data-target="#ConfirmationModal">Submit</button>
+{{--            <a href="{{ url('/welcome/') }}" class="col btn btn-primary btn-lg blue" type="button" id="newRequest">Submit</a>--}}
         </div>
     </form>
+    {{--                See Your Trips Modal--}}
+    <div class="modal fade" id="ConfirmationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content orange">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Success</h5>
+{{--                    <h3>See Your Trips</h3>--}}
+{{--                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">--}}
+{{--                        <span aria-hidden="true">&times;</span>--}}
+{{--                    </button>--}}
+                </div>
+                <div class="modal-body">
+                    Your travel authorization form has been submitted
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary mbtn" data-dismiss="modal">Close</button>
+                    {{--                                <button type="button" class="btn btn-primary">Save changes</button>--}}
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
-<?php
-if(isset($_POST['submit'])){
-    console.log("yo");
-    $to = "jason.smith@u.boisestate.edu@";
-    $subject = "My subject";
-    $txt = "Hello world!";
-    $headers = "From: do_not_reply@boisestate.edu" . "\r\n" . "CC: nathandsteele@gmail.com";
-    ​mail($to,$subject,$txt,$headers);
-    }
-?>
+
 
 <script>
     $(document).ready(function(){
