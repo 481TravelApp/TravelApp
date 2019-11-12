@@ -60,7 +60,7 @@
 <body class="background-auth">
 <div class="bootsrap-iso container">
     <h2>BSU Travel Authorization Request Form</h2>
-    <form action="" method="post">
+    <form role="form" action="" method="post">
         @csrf
 {{--        Row 1--}}
         <h3><i class="glyphicon glyphicon-user"></i>Traveler's Information</h3>
@@ -68,63 +68,63 @@
         <div class="row">
             <div class="form-group col-sm-6">
                 <label for="firstName">Traveler's First Name*</label>
-                <input type="text" class="form-control" id="firstName" placeholder="Enter First Name">
+                <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Enter First Name">
             </div>
             <div class="form-group col-sm-6">
                 <label for="lastName">Traveler's Last Name*</label>
-                <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name">
+                <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Enter Last Name">
             </div></div>
 {{--        Row 2--}}
         <div class="row">
             <div class="form-group col-sm-6">
                 <label for="empID">Traveler's Employee ID*</label>
-                <input type="number" class="form-control" id="empID" placeholder="Enter Employee ID">
+                <input type="number" class="form-control" name="empID" id="empID" placeholder="Enter Employee ID">
             </div>
             <div class="form-group col-sm-6">
                 <label for="dept">Traveler's Department:</label>
-                <input type="text" class="form-control" id="dept" placeholder="Enter Department">
+                <input type="text" class="form-control" name="dept" id="dept" placeholder="Enter Department">
             </div></div>
 {{--        Row 3--}}
         <div class="row">
             <div class="form-group col-sm-6">
                 <label for="empLoc">Traveler's Location:</label>
-                <input type="text" class="form-control" id="empLoc" placeholder="City, State, Country">
+                <input type="text" class="form-control" name="location" id="empLoc" placeholder="City, State, Country">
 {{--                <label>City, State, Country</label>--}}
             </div>
             <div class="form-group col-sm-6">
                 <label for="dept">Search Term Keywords (Optional)</label>
-                <input type="text" class="form-control" id="dept" placeholder="Enter Search Term Keywords">
+                <input type="text" class="form-control" name="keywords" id="keywords" placeholder="Enter Search Term Keywords">
             </div></div>
 {{--        Row 4--}}
         <div class="row">
             <div class="form-group col-sm-12">
                 <label for="empID">Travel Business Purpose:</label>
-                <textarea type="email" class="form-control" id="empID" placeholder="Enter Purpose of Travel" rows="3"></textarea>
+                <textarea type="email" class="form-control" name="purpose" id="purpose" placeholder="Enter Purpose of Travel" rows="3"></textarea>
             </div></div>
         <hr>
         <h3><i class="glyphicon glyphicon-plane"></i>  Trip Information</h3>
 {{--        Travel Date Row--}}
         <div class="row">
             <div class="form-group col-sm-6">
-                <label class="control-label" for="date">Travel Begin Date</label>
-                <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+                <label class="control-label" for="startDate">Travel Begin Date</label>
+                <input class="form-control" id="startDate" name="startDate" placeholder="MM/DD/YYY" type="text"/>
                 {{--                <label>City, State, Country</label>--}}
             </div>
             <div class="form-group col-sm-6">
-                <label class="control-label" for="date">Travel End Date</label>
-                <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+                <label class="control-label" for="endDate">Travel End Date</label>
+                <input class="form-control" id="endDate" name="endDate" placeholder="MM/DD/YYY" type="text"/>
             </div></div>
         <div class="row">
             <div class="form-group col-sm-12">
             <label class="control-label" for="personalBusiness">Is personal travel scheduled in conjunction with business travel? *</label>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="personal/businessRadios" id="exampleRadios1" value="option1" checked>
+                    <input class="form-check-input" type="radio" name="reason" id="exampleRadios1" value="Yes" checked>
                     <label class="form-check-label" for="exampleRadios1">
                         Yes
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="personal/businessRadios" id="exampleRadios2" value="option2">
+                    <input class="form-check-input" type="radio" name="reason" id="exampleRadios2" value="No">
                     <label class="form-check-label" for="exampleRadios2">
                         No
                     </label>
@@ -134,21 +134,21 @@
             <div class="form-group col-sm-12">
             <label class="control-label" for="busChoice">Who will pay travel costs? *</label>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="travelCostRadios" id="exampleRadios1" value="option1" checked>
+                    <input class="form-check-input" type="radio" name="payer" id="exampleRadios1" value="University" checked>
                     <label class="form-check-label" for="exampleRadios1">
                         University: Responsible in part or whole for the employee travel cost.
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="travelCostRadios" id="exampleRadios2" value="option2">
+                    <input class="form-check-input" type="radio" name="payer" id="exampleRadios2" value="Third Party">
                     <label class="form-check-label" for="exampleRadios2">
                         Third Party: Responsible in whole for the employee travel cost, also known as, "No cost travel.
                     </label>
                 </div>
             </div></div>
         <div class="row">
-            <button type="submit" name="submit" id="submit" class="btn btn-default blue col-sm-4" value="submit" data-toggle="modal" data-target="#ConfirmationModal">Submit</button>
-{{--            <a href="{{ url('/welcome/') }}" class="col btn btn-primary btn-lg blue" type="button" id="newRequest">Submit</a>--}}
+{{--            <button type="submit" name="submit" id="submit" class="btn btn-default blue col-sm-4" value="submit" data-toggle="modal" data-target="#ConfirmationModal">Submit</button>--}}
+            <a href="{{ url('/welcome/') }}" class="col-sm-6 btn btn-default btn-lg blue" type="submit" name="submit" id="submit">Submit</a>
         </div>
     </form>
     {{--                See Your Trips Modal--}}
@@ -178,7 +178,18 @@
 
 <script>
     $(document).ready(function(){
-        var date_input=$('input[name="date"]'); //our date input has the name "date"
+        var date_input=$('input[name="startDate"]'); //our date input has the name "date"
+        var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+        var options={
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        };
+        date_input.datepicker(options);
+    })
+    $(document).ready(function(){
+        var date_input=$('input[name="endDate"]'); //our date input has the name "date"
         var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
         var options={
             format: 'mm/dd/yyyy',
