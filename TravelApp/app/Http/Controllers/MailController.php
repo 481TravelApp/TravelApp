@@ -59,6 +59,8 @@ class MailController extends Controller
         $message .= "Is personal travel scheduled in conjunction with business travel: ".$reason."\n";
         $message .= "Who will pay travel costs: ".$payer."\n";
 
+        $subject .= " [".$first_name." ".$last_name."]";
+
 
         error_log(mail($to, $subject, $message, $headers));
         return view('welcome');

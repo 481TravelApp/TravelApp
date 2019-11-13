@@ -55,6 +55,9 @@
             background-color: rgba(255, 255, 255, 0.9);
             background-blend-mode: color-dodge;
         }
+        .busDates {
+            display: none;
+        }
     </style>
 </head>
 <body class="background-auth">
@@ -118,29 +121,39 @@
             <div class="form-group col-sm-12">
             <label class="control-label" for="personalBusiness">Is personal travel scheduled in conjunction with business travel? *</label>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="reason" id="exampleRadios1" value="Yes" checked>
+                    <input class="form-check-input" type="radio" name="reason" id="exampleRadios1" value="Yes" onclick="hide()">
                     <label class="form-check-label" for="exampleRadios1">
                         Yes
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="reason" id="exampleRadios2" value="No">
+                    <input class="form-check-input" type="radio" name="reason" id="exampleRadios2" value="No" onclick="show()" checked>
                     <label class="form-check-label" for="exampleRadios2">
                         No
                     </label>
                 </div>
         </div></div>
+{{--        Business Travel Dates--}}
+        <div class="row busDates" id="busDates">
+            <div class="form-group col-sm-6">
+                <label class="control-label" for="busStartDate">Travel Begin Date</label>
+                <input class="form-control" id="busStartDate" name="busStartDate" placeholder="MM/DD/YYY" type="text"/>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="control-label" for="busEndDate">Travel End Date</label>
+                <input class="form-control" id="busEndDate" name="busEndDate" placeholder="MM/DD/YYY" type="text"/>
+            </div></div>
         <div class="row">
             <div class="form-group col-sm-12">
             <label class="control-label" for="busChoice">Who will pay travel costs? *</label>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="payer" id="exampleRadios1" value="University" checked>
+                    <input class="form-check-input" type="radio" name="payer" id="exampleRadios1" value="University">
                     <label class="form-check-label" for="exampleRadios1">
                         University: Responsible in part or whole for the employee travel cost.
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="payer" id="exampleRadios2" value="Third Party">
+                    <input class="form-check-input" type="radio" name="payer" id="exampleRadios2" value="Third Party" checked>
                     <label class="form-check-label" for="exampleRadios2">
                         Third Party: Responsible in whole for the employee travel cost, also known as, "No cost travel.
                     </label>
@@ -199,5 +212,11 @@
         };
         date_input.datepicker(options);
     })
+    function show(){
+        document.getElementById('busDates').style.display ='none';
+    }
+    function hide(){
+        document.getElementById('busDates').style.display = 'block';
+    }
 </script>
 </html>
