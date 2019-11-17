@@ -34,6 +34,8 @@ class MailController extends Controller
             'X-Mailer: PHP/' . phpversion();
 
         error_log($request->input('firstName'));
+        $out = new \Symfony\Component\Console\Output\ConsoleOutput();
+        $out->writeln("Hello from Terminal");
 
         $first_name = $request->input('firstName');
         $last_name = $request->input('lastName');

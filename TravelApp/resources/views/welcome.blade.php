@@ -20,12 +20,14 @@
 
     </head>
     <header class="header-custom">
-        <div class="row">
-{{--            <img class="h" src="/images/boisestate-leftalignedmark-blue-whiteoutline.png">--}}
-            @include('includes.header')
+        <div class="logo">
+            <a href="http://www.boisestate.edu">
+                <img id="banner" src="/images/boisestate-leftalignedmark-orange.png">
+            </a>
         </div>
+            @include('includes.header')
     </header>
-    <body class="container content ">
+    <body class="">
 {{--            <div>--}}
 {{--                <img src="{{URL('/images/bsu_logo.png')}}" alt="bsu logo" style="max-width: 400px; top: 0; left: 0; opacity: .3; background-position: center; position: ; z-index: 1;">--}}
 {{--            </div>--}}

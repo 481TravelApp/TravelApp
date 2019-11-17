@@ -25,7 +25,7 @@
 .top-right {
     position: absolute;
     right: 10px;
-    top: 18px;
+    top: 50px;
 }
 
 .content {
@@ -43,7 +43,7 @@
     /*color: #636b6f;*/
     color: white;
     padding: 0 25px;
-    font-size: 2vw;
+    font-size: 18px;
     /*font-weight: 700;*/
     letter-spacing: .1rem;
     text-decoration: none;
@@ -110,11 +110,15 @@
 }
 .btn {
     margin-top: 10px;
-    font-size: 2vw;
+    /*font-size: 2vw;*/
 }
 .btn-secondary{
     /*font-weight: 500;*/
     font-weight: bolder;
+}
+
+#newRequest .btn-primary {
+    background-color: #0033a0;
 }
 .mbtn {
     width: 50%;
@@ -125,22 +129,25 @@
 }
 .header-custom {
     /*background-image: url('/images/boisestate-leftalignedmark-blue-whiteoutline.png');*/
-    background-image: url('/images/boisestate-leftalignedmark-orange.png');
+    /*background-image: url('/images/boisestate-leftalignedmark-orange.png');*/
 
-    height: 10%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    height: 100px;
+    /*background-repeat: no-repeat;*/
+    /*background-attachment: fixed;*/
     /*background-position-x: 50%;*/
-    background-size: 25%;
+    /*background-size: 25%;*/
     background-color: #0033a0;
     max-height: 80px;
-    margin-right: -100px;
-    margin-left: -100px;
+    /*margin-right: -300px;*/
+    /*margin-left: -300px;*/
+    /*width: 100%;*/
+    /*min-width: 100%;*/
+    overflow: hidden;
 }
 .container {
-    width: 100%;
-    padding-left: 0px;
-    padding-right: 0px;
+    /*width: 100%;*/
+    /*padding-left: 0px;*/
+    /*padding-right: 0px;*/
 }
 .spacing {
     margin-top: 10%;
@@ -175,3 +182,19 @@
  .estimates {
      display: none;
  }
+ .logo {
+     /*height: 100px;*/
+     /*width: 300px;*/
+     float: left;
+ }
+
+#banner {
+    position: relative;
+    top: -10px;
+    left: 0px;
+    right: 0px;
+    width: auto;
+    height: 100px;
+    max-height: 100px;
+    z-index: 5;
+}

@@ -39,16 +39,21 @@
     @include('includes.head')
 </head>
 <header class="header-custom">
-    <div class="row"></div>
+    <div class="logo">
+        <a href="http://www.boisestate.edu">
+            <img id="banner" src="/images/boisestate-leftalignedmark-orange.png">
+        </a>
+    </div>
 </header>
 <body class="">
 <div class="bootsrap-iso container fpad">
+    <a href="{{ url('welcome') }}">Back to Welcome Page</a>
     <h2>Travel Authorization Request Form</h2>
     <form role="form" action="" method="post">
         @csrf
 {{--        Row 1--}}
         <h3><i class="glyphicon glyphicon-user"></i>Traveler's Information</h3>
-        <p>Please review the <a href="https://www.boisestate.edu/policy/finance/policy-title-travel/">Travel Policy #6180</a> for more information.</p>
+        <p>Please review the <a href="https://www.boisestate.edu/policy/finance/policy-title-travel/" target="_blank">Travel Policy #6180</a> for more information.</p>
         <div class="row">
             <div class="form-group col-sm-6">
                 <label for="firstName">Traveler's First Name*</label>
