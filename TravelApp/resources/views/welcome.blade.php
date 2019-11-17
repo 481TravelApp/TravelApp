@@ -29,7 +29,7 @@
 {{--            <div>--}}
 {{--                <img src="{{URL('/images/bsu_logo.png')}}" alt="bsu logo" style="max-width: 400px; top: 0; left: 0; opacity: .3; background-position: center; position: ; z-index: 1;">--}}
 {{--            </div>--}}
-            <div class="container content">
+            <div class="container content spacing">
 
                 <div class="row">
                     <div class="title">Boise State University</div><div class="title">Travel App</div><br><br>

@@ -134,11 +134,16 @@
     background-size: 25%;
     background-color: #0033a0;
     max-height: 80px;
+    margin-right: -100px;
+    margin-left: -100px;
 }
 .container {
     width: 100%;
     padding-left: 0px;
     padding-right: 0px;
+}
+.spacing {
+    margin-top: 10%;
 }
 
 
