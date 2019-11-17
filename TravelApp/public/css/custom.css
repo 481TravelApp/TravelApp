@@ -1,0 +1,172 @@
+ html, body {
+     background-color: #fff;
+     color: #1d2124;
+     /*font-family: 'Nunito', sans-serif;*/
+     font-family: 'Source Sans Pro', sans-serif;
+     /*font-weight: 300;*/
+     height: 100vh;
+     margin: 0;
+ }
+
+.full-height {
+    height: 100vh;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+.content {
+    text-align: center;
+    font-weight: 400;
+}
+
+.title {
+    font-size: 6vw;
+    color: #0033a0;
+    /*font-weight: bolder;*/
+}
+
+.links > a {
+    /*color: #636b6f;*/
+    color: white;
+    padding: 0 25px;
+    font-size: 2vw;
+    /*font-weight: 700;*/
+    letter-spacing: .1rem;
+    text-decoration: none;
+    /*text-transform: uppercase;*/
+}
+.blue {
+    background-color: #0033a0;
+    border-color: #d64309;
+}
+.orange-inactive {
+    background-color: #d64309;
+    opacity: 0.85;
+    border-color: #0033a0;
+    color: #0033a0;
+}
+.modal-footer {
+    text-align: center;
+    border: none;
+}
+.modal-body {
+    font-size: 2vh;
+}
+.modal-dialog {
+    width: 80%;
+    margin: 30px auto;
+    padding: 10%;
+    min-width: 250px;
+    /*margin-top: 15%;*/
+}
+.modal-header {
+    border: none;
+}
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #999;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 6px;
+    -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    outline: 0;
+    height: 50%;
+}
+.modal-title {
+    font-size: 3vh;
+}
+.orange {
+    /*background-color: #d64309;*/
+    background-color: white;
+    opacity: .95;
+    border-color: #0033a0;
+    color: #0033a0;
+}
+.background {
+    /*background-image: url('/images/bsu_logo.png');*/
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: 50%;
+    background-position-y: 10%;
+    background-size: cover;
+    background-color: rgba(255, 255, 255, 0.7);
+    background-blend-mode: color-dodge;
+}
+.btn {
+    margin-top: 10px;
+    font-size: 2vw;
+}
+.btn-secondary{
+    /*font-weight: 500;*/
+    font-weight: bolder;
+}
+.mbtn {
+    width: 50%;
+}
+.col {
+    min-width: 300px;
+    width: 70%;
+}
+.header-custom {
+    /*background-image: url('/images/boisestate-leftalignedmark-blue-whiteoutline.png');*/
+    background-image: url('/images/boisestate-leftalignedmark-orange.png');
+
+    height: 10%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /*background-position-x: 50%;*/
+    background-size: 25%;
+    background-color: #0033a0;
+    max-height: 80px;
+}
+.container {
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+
+  .blue {
+      background-color: #0033a0;
+      color: white;
+  }
+ .green {
+     background-color: #4bb543;
+     color: white;
+ }
+ /*.background-auth {*/
+ /*    background-image: url('/images/bsu_logo.png');*/
+ /*    background-repeat: no-repeat;*/
+ /*    background-attachment: fixed;*/
+ /*    background-position-x: 50%;*/
+ /*    background-position-y: 50%;*/
+ /*    background-size: 50%;*/
+ /*    background-color: rgba(255, 255, 255, 0.9);*/
+ /*    background-blend-mode: color-dodge;*/
+ /*}*/
+ .busDates {
+     display: none;
+ }
+
+ .fpad {
+     padding: 20px;
+ }
+ .estimates {
+     display: none;
+ }

@@ -36,33 +36,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
-    <style>
-        .blue {
-            background-color: #0033a0;
-            color: white;
-        }
-        .green {
-            background-color: #4bb543;
-            color: white;
-        }
-        .background-auth {
-            background-image: url('/images/bsu_logo.png');
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position-x: 50%;
-            background-position-y: 50%;
-            background-size: 50%;
-            background-color: rgba(255, 255, 255, 0.9);
-            background-blend-mode: color-dodge;
-        }
-        .busDates {
-            display: none;
-        }
-    </style>
+    @include('includes.head')
 </head>
-<body class="background-auth">
-<div class="bootsrap-iso container">
-    <h2>BSU Travel Authorization Request Form</h2>
+<header class="header-custom">
+    <div class="row"></div>
+</header>
+<body class="">
+<div class="bootsrap-iso container fpad">
+    <h2>Travel Authorization Request Form</h2>
     <form role="form" action="" method="post">
         @csrf
 {{--        Row 1--}}
@@ -147,18 +128,51 @@
             <div class="form-group col-sm-12">
             <label class="control-label" for="busChoice">Who will pay travel costs? *</label>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="payer" id="exampleRadios1" value="University">
-                    <label class="form-check-label" for="exampleRadios1">
-                        University: Responsible in part or whole for the employee travel cost.
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="payer" id="exampleRadios2" value="Third Party" checked>
-                    <label class="form-check-label" for="exampleRadios2">
+                    <input class="form-check-input" type="radio" name="payer" id="thirdparty" value="Third Party" onclick="hide_costs()" checked>
+                    <label class="form-check-label" for="thirdparty">
                         Third Party: Responsible in whole for the employee travel cost, also known as, "No cost travel.
                     </label>
                 </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="payer" id="university" value="University" onclick="show_costs()">
+                    <label class="form-check-label" for="university">
+                        University: Responsible in part or whole for the employee travel cost.
+                    </label>
+                </div>
             </div></div>
+        <div class="row estimates" id="estimates">
+            <label class="col-xs-12" style="font-weight: bold">
+                Please provide estimated costs for the following items:
+            </label>
+            <div class="col-xs-3">
+                <label for="ex2">Registration</label>
+                <input class="form-control" id="ex2" type="number">
+            </div>
+            <div class="col-xs-3">
+                <label for="ex2">Air Fair</label>
+                <input class="form-control" id="ex2" type="number">
+            </div>
+            <div class="col-xs-3">
+                <label for="ex2">Lodging</label>
+                <input class="form-control" id="ex2" type="number">
+            </div>
+            <div class="col-xs-3">
+                <label for="ex2">Transportation</label>
+                <input class="form-control" id="ex2" type="number">
+            </div>
+            <div class="col-xs-3">
+                <label for="ex2">Baggage</label>
+                <input class="form-control" id="ex2" type="text">
+            </div>
+            <div class="col-xs-3">
+                <label for="ex2">Parking</label>
+                <input class="form-control" id="ex2" type="text">
+            </div>
+            <div class="col-xs-3">
+                <label for="ex2">Other</label>
+                <input class="form-control" id="ex2" type="text">
+            </div>
+        </div>
         <div class="row">
 {{--            <button type="submit" name="submit" id="submit" class="btn btn-default blue col-sm-4" value="submit" data-toggle="modal" data-target="#ConfirmationModal">Submit</button>--}}
             <a href="{{ url('/welcome/') }}" class="col-sm-6 btn btn-default btn-lg blue" type="submit" name="submit" id="submit">Submit</a>
@@ -217,6 +231,12 @@
     }
     function hide(){
         document.getElementById('busDates').style.display = 'block';
+    }
+    function show_costs(){
+        document.getElementById('estimates').style.display = 'block';
+    }
+    function hide_costs() {
+        document.getElementById('estimates').style.display = 'none';
     }
 </script>
 </html>

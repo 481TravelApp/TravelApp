@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         @include('includes.head')
-        <title>Boise State Travel App</title>
+        <title>Boise State University Travel App</title>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
@@ -17,146 +17,22 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                /*font-family: 'Nunito', sans-serif;*/
-                font-family: 'Source Sans Pro', sans-serif;
-                /*font-weight: 300;*/
-                height: 100vh;
-                margin: 0;
-            }
 
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-                font-weight: 400;
-            }
-
-            .title {
-                font-size: 6vw;
-                color: #0033a0;
-                /*font-weight: bolder;*/
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-            .blue {
-                background-color: #0033a0;
-                border-color: #d64309;
-            }
-            .orange-inactive {
-                background-color: #d64309;
-                opacity: 0.85;
-                border-color: #0033a0;
-                color: #0033a0;
-            }
-            .modal-footer {
-                text-align: center;
-                border: none;
-            }
-            .modal-body {
-                font-size: 2vh;
-            }
-            .modal-dialog {
-                width: 80%;
-                margin: 30px auto;
-                padding: 10%;
-                min-width: 250px;
-                /*margin-top: 15%;*/
-            }
-            .modal-header {
-                border: none;
-            }
-            .modal-content {
-                position: relative;
-                background-color: #fff;
-                background-clip: padding-box;
-                border: 1px solid #999;
-                border: 1px solid rgba(0,0,0,.2);
-                border-radius: 6px;
-                -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.5);
-                box-shadow: 0 3px 9px rgba(0,0,0,.5);
-                outline: 0;
-                height: 50%;
-            }
-            .modal-title {
-                font-size: 3vh;
-            }
-            .orange {
-                /*background-color: #d64309;*/
-                background-color: white;
-                opacity: .95;
-                border-color: #0033a0;
-                color: #0033a0;
-            }
-            .background {
-                background-image: url('/images/bsu_logo.png');
-                background-repeat: no-repeat;
-                background-attachment: fixed;
-                background-position-x: 50%;
-                background-position-y: 10%;
-                background-size: 30%;
-                background-color: rgba(255, 255, 255, 0.7);
-                background-blend-mode: color-dodge;
-            }
-            .btn {
-                margin-top: 10px;
-                font-size: 2vw;
-            }
-            .btn
-            .btn-secondary{
-                /*font-weight: 500;*/
-                font-weight: bolder;
-            }
-            .mbtn {
-                width: 50%;
-            }
-            .col {
-                min-width: 300px;
-                width: 70%;
-            }
-        </style>
     </head>
-    <header>
-        @include('includes.header')
+    <header class="header-custom">
+        <div class="row">
+{{--            <img class="h" src="/images/boisestate-leftalignedmark-blue-whiteoutline.png">--}}
+            @include('includes.header')
+        </div>
     </header>
-    <body class="flex-center position-ref background">
+    <body class="container content ">
 {{--            <div>--}}
 {{--                <img src="{{URL('/images/bsu_logo.png')}}" alt="bsu logo" style="max-width: 400px; top: 0; left: 0; opacity: .3; background-position: center; position: ; z-index: 1;">--}}
 {{--            </div>--}}
             <div class="container content">
 
                 <div class="row">
-                    <div class="title">Boise State Travel App</div><br><br><br>
+                    <div class="title">Boise State University</div><div class="title">Travel App</div><br><br>
                 </div>
                 <div class="row">
                     <a href="{{ url('/authorization/') }}" class="col btn btn-primary btn-lg blue" type="button" id="newRequest">Submit a new travel request</a>
