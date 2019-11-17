@@ -149,34 +149,37 @@
             <label class="col-xs-12" style="font-weight: bold">
                 Please provide estimated costs for the following items:
             </label>
-            <div class="col-xs-3">
+            <div class="row">
+            <div class="col-xs-4">
                 <label for="ex2">Registration</label>
                 <input class="form-control" id="ex2" type="number">
             </div>
-            <div class="col-xs-3">
+            <div class="col-xs-4">
                 <label for="ex2">Air Fair</label>
                 <input class="form-control" id="ex2" type="number">
             </div>
-            <div class="col-xs-3">
+            <div class="col-xs-4">
                 <label for="ex2">Lodging</label>
                 <input class="form-control" id="ex2" type="number">
-            </div>
-            <div class="col-xs-3">
+            </div></div>
+            <div class="row">
+            <div class="col-xs-4">
                 <label for="ex2">Transportation</label>
                 <input class="form-control" id="ex2" type="number">
             </div>
-            <div class="col-xs-3">
+            <div class="col-xs-4">
                 <label for="ex2">Baggage</label>
                 <input class="form-control" id="ex2" type="text">
             </div>
-            <div class="col-xs-3">
+            <div class="col-xs-4">
                 <label for="ex2">Parking</label>
                 <input class="form-control" id="ex2" type="text">
-            </div>
-            <div class="col-xs-3">
+            </div></div>
+            <div class="row">
+            <div class="col-xs-4">
                 <label for="ex2">Other</label>
                 <input class="form-control" id="ex2" type="text">
-            </div>
+            </div></div>
         </div>
         <div class="row">
 {{--            <button type="submit" name="submit" id="submit" class="btn btn-default blue col-sm-4" value="submit" data-toggle="modal" data-target="#ConfirmationModal">Submit</button>--}}

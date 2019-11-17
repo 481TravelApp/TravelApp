@@ -26,7 +26,7 @@ class MailController extends Controller
     {
         error_log('post');
 //        $request = $_POST;
-        $to = "jasonsmith7@u.boisestate.edu";
+        $to = "jtsmithers@gmail.com";
         $subject = "Travel Authorization Request";
         $message = "";
         $headers = "From: do_not_reply@boisestate.edu" . "\r\n" .
