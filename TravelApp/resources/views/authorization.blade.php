@@ -150,40 +150,41 @@
                 Please provide estimated costs for the following items:
             </label>
             <div class="row">
-            <div class="col-xs-4">
+            <div class="col-xs-5">
                 <label for="ex2">Registration</label>
                 <input class="form-control" id="registration" type="number">
             </div>
-            <div class="col-xs-4">
+            <div class="col-xs-5">
                 <label for="ex2">Air Fair</label>
                 <input class="form-control" id="air_fare" type="number">
-            </div>
-            <div class="col-xs-4">
-                <label for="ex2">Lodging</label>
-                <input class="form-control" id="lodging" type="number">
             </div></div>
             <div class="row">
-            <div class="col-xs-4">
+            <div class="col-xs-5">
+                <label for="ex2">Lodging</label>
+                <input class="form-control" id="lodging" type="number">
+            </div>
+            <div class="col-xs-5">
                 <label for="ex2">Transportation</label>
                 <input class="form-control" id="transportation" type="number">
-            </div>
-            <div class="col-xs-4">
+            </div></div>
+            <div class="row">
+            <div class="col-xs-5">
                 <label for="ex2">Baggage</label>
                 <input class="form-control" id="baggage" type="number">
             </div>
-            <div class="col-xs-4">
+            <div class="col-xs-5">
                 <label for="ex2">Parking</label>
                 <input class="form-control" id="parking" type="number">
             </div></div>
             <div class="row">
-            <div class="col-xs-4">
+            <div class="col-xs-5">
                 <label for="ex2">Other</label>
                 <input class="form-control" id="other" type="number">
             </div></div>
         </div>
         <div class="row">
 {{--            <button type="submit" name="submit" id="submit" class="btn btn-default blue col-sm-4" value="submit" data-toggle="modal" data-target="#ConfirmationModal">Submit</button>--}}
-            <a href="{{ url('/welcome/') }}" class="col-sm-6 btn btn-default btn-lg blue" type="submit" name="submit" id="submit">Submit</a>
+            <a href="{{ url('/') }}" class="col-sm-6 btn btn-default btn-lg blue" type="submit" name="submit" id="submit">Submit</a>
         </div>
     </form>
     {{--                See Your Trips Modal--}}

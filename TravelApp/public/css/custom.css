@@ -34,7 +34,7 @@
 }
 
 .title {
-    font-size: 6vw;
+    font-size: 6vh;
     color: #0033a0;
     /*font-weight: bolder;*/
 }
@@ -150,7 +150,7 @@
     /*padding-right: 0px;*/
 }
 .spacing {
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 

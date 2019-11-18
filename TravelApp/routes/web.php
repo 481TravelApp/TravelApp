@@ -29,11 +29,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/authorization', 'MailController@sendMail');
 Route::get('/authorization', function()
 {
+    error_log('get');
     return View::make('authorization');
 });
 
 //Route::match(['get', 'post'], '/authorization', function (Request $request) {
-////    error_log('get');
+////
 //
 //    if (Request::isMethod('get')) {
 //        error_log('get');

@@ -34,7 +34,8 @@
             <div class="container content spacing">
 
                 <div class="row">
-                    <div class="title">Boise State University</div><div class="title">Travel App</div><br><br>
+                    <div class="title">Boise State University</div>
+                    <div class="title">Travel Processing App</div><br><br>
                 </div>
                 <div class="row">
                     <a href="{{ url('/authorization/') }}" class="col btn btn-primary btn-lg blue" type="button" id="newRequest">Submit a new travel request</a>
