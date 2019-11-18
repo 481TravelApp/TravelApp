@@ -47,7 +47,16 @@ class MailController extends Controller
         $start_date =  $request->input('startDate');
         $end_date = $request->input('endDate');
         $reason = $request->input('reason');
+        $bus_start = $request->input('busStartDate');
+        $bus_end = $request->input('busEndDate');
         $payer = $request->input('payer');
+        $registration = $request->input('registration');
+        $air_fare = $request->input('air_fare');
+        $lodging = $request->input('lodging');
+        $transportation = $request->input('transportation');
+        $baggage = $request->input('baggage');
+        $parking = $request->input('parking');
+        $other = $request->input('other');
 //
         $message .= "First Name: ".$first_name."\n";
         $message .= "Last Name: ".$last_name."\n";
@@ -59,7 +68,19 @@ class MailController extends Controller
         $message .= "Travel Begin Date: ".$start_date."\n";
         $message .= "Travel End Date: ".$end_date."\n";
         $message .= "Is personal travel scheduled in conjunction with business travel: ".$reason."\n";
+        $message .= "Business Travel Begin Date: ".$bus_start."\n";
+        $message .= "Business Travel End Date: ".$bus_end."\n";
         $message .= "Who will pay travel costs: ".$payer."\n";
+        $message .= "Travel Begin Date: ".$start_date."\n";
+        $message .= "Estimated Costs:"."\n";
+        $message .= "Travel Begin Date: ".$start_date."\n";
+        $message .= "Registration: ".$registration."\n";
+        $message .= "Air Fare: ".$air_fare."\n";
+        $message .= "Lodging: ".$lodging."\n";
+        $message .= "Transportation: ".$transportation."\n";
+        $message .= "Baggage: ".$baggage."\n";
+        $message .= "Parking: ".$parking."\n";
+        $message .= "Other: ".$other."\n";
 
         $subject .= " [".$first_name." ".$last_name."]";
 

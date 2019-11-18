@@ -135,7 +135,7 @@
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="payer" id="thirdparty" value="Third Party" onclick="hide_costs()" checked>
                     <label class="form-check-label" for="thirdparty">
-                        Third Party: Responsible in whole for the employee travel cost, also known as, "No cost travel.
+                        Third Party: Responsible in whole for the employee travel cost, also known as, "No cost travel."
                     </label>
                 </div>
                 <div class="form-check">
@@ -152,33 +152,33 @@
             <div class="row">
             <div class="col-xs-4">
                 <label for="ex2">Registration</label>
-                <input class="form-control" id="ex2" type="number">
+                <input class="form-control" id="registration" type="number">
             </div>
             <div class="col-xs-4">
                 <label for="ex2">Air Fair</label>
-                <input class="form-control" id="ex2" type="number">
+                <input class="form-control" id="air_fare" type="number">
             </div>
             <div class="col-xs-4">
                 <label for="ex2">Lodging</label>
-                <input class="form-control" id="ex2" type="number">
+                <input class="form-control" id="lodging" type="number">
             </div></div>
             <div class="row">
             <div class="col-xs-4">
                 <label for="ex2">Transportation</label>
-                <input class="form-control" id="ex2" type="number">
+                <input class="form-control" id="transportation" type="number">
             </div>
             <div class="col-xs-4">
                 <label for="ex2">Baggage</label>
-                <input class="form-control" id="ex2" type="text">
+                <input class="form-control" id="baggage" type="number">
             </div>
             <div class="col-xs-4">
                 <label for="ex2">Parking</label>
-                <input class="form-control" id="ex2" type="text">
+                <input class="form-control" id="parking" type="number">
             </div></div>
             <div class="row">
             <div class="col-xs-4">
                 <label for="ex2">Other</label>
-                <input class="form-control" id="ex2" type="text">
+                <input class="form-control" id="other" type="number">
             </div></div>
         </div>
         <div class="row">
@@ -225,6 +225,28 @@
     })
     $(document).ready(function(){
         var date_input=$('input[name="endDate"]'); //our date input has the name "date"
+        var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+        var options={
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        };
+        date_input.datepicker(options);
+    })
+    $(document).ready(function(){
+        var date_input=$('input[name="busStartDate"]'); //our date input has the name "date"
+        var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+        var options={
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        };
+        date_input.datepicker(options);
+    })
+    $(document).ready(function(){
+        var date_input=$('input[name="busEndDate"]'); //our date input has the name "date"
         var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
         var options={
             format: 'mm/dd/yyyy',
