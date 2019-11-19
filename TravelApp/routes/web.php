@@ -38,7 +38,7 @@ Route::get('/authorization', function()
 {
     error_log('get');
     if (Auth::guest())
-        return View::make('login');
+        return View::make('welcome');
     else
         return View::make('authorization');
 });

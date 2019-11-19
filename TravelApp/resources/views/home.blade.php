@@ -15,6 +15,7 @@
                     @endif
 
                     You are logged in!
+                    <a href="{{ url('/') }}">Continue</a>
                 </div>
             </div>
         </div>
