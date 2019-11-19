@@ -25,6 +25,8 @@ class MailController extends Controller
     public function sendMail(Request $request)
     {
         error_log('post');
+//        error_log($request->has('other'));
+        error_log(trim($request->input('other')) == '');
 //        $request = $_POST;
         $to = "jasonsmith7@u.boisestate.edu";
         $subject = "Travel Authorization Request";
@@ -36,9 +38,9 @@ class MailController extends Controller
 //        $headers = "From: do_not_reply@boisestate.edu" . "\r\n" .
 //            'X-Mailer: PHP/' . phpversion();
 
-        error_log($request->input('firstName'));
-        $out = new \Symfony\Component\Console\Output\ConsoleOutput();
-        $out->writeln("Hello from Terminal");
+//        error_log($request->input('firstName'));
+//        $out = new \Symfony\Component\Console\Output\ConsoleOutput();
+//        $out->writeln("Hello from Terminal");
 
         $first_name = $request->input('firstName');
         $last_name = $request->input('lastName');
@@ -66,23 +68,27 @@ class MailController extends Controller
         $message .= "Employee ID: ".$emp_id."\n";
         $message .= "Department: ".$dept."\n";
         $message .= "Location: ".$location."\n";
-        $message .= "Search Term Keywords: ".$keywords."\n";
+        $message .= "Search Term Keywords: ".$keywords."\n\n";
         $message .= "Travel Business Purpose: "."\n\n".$purpose."\n\n";
         $message .= "Travel Begin Date: ".$start_date."\n";
         $message .= "Travel End Date: ".$end_date."\n";
-        $message .= "Is personal travel scheduled in conjunction with business travel: ".$reason."\n";
-        $message .= "Business Travel Begin Date: ".$bus_start."\n";
-        $message .= "Business Travel End Date: ".$bus_end."\n";
-        $message .= "Who will pay travel costs: ".$payer."\n";
 
-        $message .= "Estimated Costs:"."\n";
-        $message .= "Registration: ".$registration."\n";
-        $message .= "Air Fare: ".$air_fare."\n";
-        $message .= "Lodging: ".$lodging."\n";
-        $message .= "Transportation: ".$transportation."\n";
-        $message .= "Baggage: ".$baggage."\n";
-        $message .= "Parking: ".$parking."\n";
-        $message .= "Other: ".$other."\n";
+        $message .= "Is personal travel scheduled in conjunction with business travel: ".$reason."\n";
+        if (trim($reason) == 'Yes') {
+            $message .= "Business Travel Begin Date: " . $bus_start . "\n";
+            $message .= "Business Travel End Date: " . $bus_end . "\n";
+        }
+        $message .= "Who will pay travel costs: ".$payer."\n";
+        if (trim($payer) == 'University') {
+            $message .= "Estimated Costs:" . "\n";
+            $message .= "\tRegistration: " . $registration . "\n";
+            $message .= "\tAir Fare: " . $air_fare . "\n";
+            $message .= "\tLodging: " . $lodging . "\n";
+            $message .= "\tTransportation: " . $transportation . "\n";
+            $message .= "\tBaggage: " . $baggage . "\n";
+            $message .= "\tParking: " . $parking . "\n";
+            $message .= "\tOther: " . $other . "\n";
+        }
 
         $subject .= " [".$first_name." ".$last_name."]";
 
