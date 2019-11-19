@@ -24,9 +24,7 @@
     </head>
     <header class="header-custom">
         <div class="logo">
-            <a href="http://www.boisestate.edu">
                 <img id="banner" src="/images/boisestate-leftalignedmark-orange.png">
-            </a>
         </div>
             @include('includes.header')
     </header>
