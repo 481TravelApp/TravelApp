@@ -3,6 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
         @include('includes.head')
         <title>Boise State University Travel App</title>
         <!-- Latest compiled and minified CSS -->
@@ -37,9 +40,16 @@
                     <div class="title">Boise State University</div>
                     <div class="title">Travel Processing App</div><br><br>
                 </div>
-                <div class="row">
-                    <a href="{{ url('/authorization/') }}" class="col btn btn-primary btn-lg blue" type="button" id="newRequest">Submit a new travel request</a>
-                </div>
+                @auth
+                    <div class="row">
+                        <a href="{{ url('/authorization/') }}" class="col btn btn-primary btn-lg blue" type="button" id="newRequest">Submit a new travel request</a>
+                    </div>
+                @endauth
+                @guest
+                    <div class="row">
+                        <a href="{{ url('/login') }}" class="col btn btn-primary btn-lg blue" type="button" id="newRequest">Submit a new travel request</a>
+                    </div>
+                @endguest
                 <div class="row">
                     <button class="col btn btn-secondary btn-lg orange-inactive" type="button" id="seeTrips" data-toggle="modal" data-target="#TripModal">
                         See your trips

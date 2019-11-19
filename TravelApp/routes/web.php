@@ -37,7 +37,10 @@ Route::post('/authorization', 'MailController@sendMail');
 Route::get('/authorization', function()
 {
     error_log('get');
-    return View::make('authorization');
+    if (Auth::guest())
+        return View::make('login');
+    else
+        return View::make('authorization');
 });
 
 //Route::match(['get', 'post'], '/authorization', function (Request $request) {

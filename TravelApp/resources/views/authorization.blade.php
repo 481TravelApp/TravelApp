@@ -46,6 +46,9 @@
     </div>
 </header>
 <body class="">
+@guest
+
+@endguest
 <div class="bootsrap-iso container fpad">
     <a href="{{ url('welcome') }}">Back to Welcome Page</a>
     <h2>Travel Authorization Request Form</h2>
