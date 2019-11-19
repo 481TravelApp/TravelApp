@@ -26,12 +26,14 @@ class MailController extends Controller
     {
         error_log('post');
 //        $request = $_POST;
-        $to = "jtsmithers@gmail.com";
+        $to = "jasonsmith7@u.boisestate.edu";
         $subject = "Travel Authorization Request";
         $message = "";
         $headers = "From: do_not_reply@boisestate.edu" . "\r\n" .
             "CC: nathandsteele@gmail.com" . "\r\n" .
             'X-Mailer: PHP/' . phpversion();
+//        $headers = "From: do_not_reply@boisestate.edu" . "\r\n" .
+//            'X-Mailer: PHP/' . phpversion();
 
         error_log($request->input('firstName'));
         $out = new \Symfony\Component\Console\Output\ConsoleOutput();
@@ -64,16 +66,15 @@ class MailController extends Controller
         $message .= "Department: ".$dept."\n";
         $message .= "Location: ".$location."\n";
         $message .= "Search Term Keywords: ".$keywords."\n";
-        $message .= "Travel Business Purpose: "."\n".$purpose."\n";
+        $message .= "Travel Business Purpose: "."\n\n".$purpose."\n\n";
         $message .= "Travel Begin Date: ".$start_date."\n";
         $message .= "Travel End Date: ".$end_date."\n";
         $message .= "Is personal travel scheduled in conjunction with business travel: ".$reason."\n";
         $message .= "Business Travel Begin Date: ".$bus_start."\n";
         $message .= "Business Travel End Date: ".$bus_end."\n";
         $message .= "Who will pay travel costs: ".$payer."\n";
-        $message .= "Travel Begin Date: ".$start_date."\n";
+
         $message .= "Estimated Costs:"."\n";
-        $message .= "Travel Begin Date: ".$start_date."\n";
         $message .= "Registration: ".$registration."\n";
         $message .= "Air Fare: ".$air_fare."\n";
         $message .= "Lodging: ".$lodging."\n";
@@ -83,6 +84,8 @@ class MailController extends Controller
         $message .= "Other: ".$other."\n";
 
         $subject .= " [".$first_name." ".$last_name."]";
+
+        error_log($message);
 
 
         error_log(mail($to, $subject, $message, $headers));

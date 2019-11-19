@@ -152,39 +152,39 @@
             <div class="row">
             <div class="col-xs-5">
                 <label for="ex2">Registration</label>
-                <input class="form-control" id="registration" type="number">
+                <input class="form-control" id="registration" name="registration" type="number">
             </div>
             <div class="col-xs-5">
                 <label for="ex2">Air Fair</label>
-                <input class="form-control" id="air_fare" type="number">
+                <input class="form-control" id="air_fare" name="air_fare" type="number">
             </div></div>
             <div class="row">
             <div class="col-xs-5">
                 <label for="ex2">Lodging</label>
-                <input class="form-control" id="lodging" type="number">
+                <input class="form-control" id="lodging" name="lodging" type="number">
             </div>
             <div class="col-xs-5">
                 <label for="ex2">Transportation</label>
-                <input class="form-control" id="transportation" type="number">
+                <input class="form-control" id="transportation" name="transportation" type="number">
             </div></div>
             <div class="row">
             <div class="col-xs-5">
                 <label for="ex2">Baggage</label>
-                <input class="form-control" id="baggage" type="number">
+                <input class="form-control" id="baggage" name="baggage" type="number">
             </div>
             <div class="col-xs-5">
                 <label for="ex2">Parking</label>
-                <input class="form-control" id="parking" type="number">
+                <input class="form-control" id="parking" name="parking" type="number">
             </div></div>
             <div class="row">
             <div class="col-xs-5">
                 <label for="ex2">Other</label>
-                <input class="form-control" id="other" type="number">
+                <input class="form-control" id="other" name="other" type="number">
             </div></div>
         </div>
         <div class="row">
-{{--            <button type="submit" name="submit" id="submit" class="btn btn-default blue col-sm-4" value="submit" data-toggle="modal" data-target="#ConfirmationModal">Submit</button>--}}
-            <a href="{{ url('/') }}" class="col-sm-6 btn btn-default btn-lg blue" type="submit" name="submit" id="submit">Submit</a>
+            <button type="submit" name="submit" id="submit" class="btn btn-default blue col-sm-4" value="submit" data-toggle="modal" data-target="#ConfirmationModal">Submit</button>
+{{--            <a class="col-sm-6 btn btn-default btn-lg blue" type="submit" name="submit" id="submit">Submit</a>--}}
         </div>
     </form>
     {{--                See Your Trips Modal--}}
