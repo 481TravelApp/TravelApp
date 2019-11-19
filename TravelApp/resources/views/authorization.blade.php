@@ -183,7 +183,7 @@
             </div></div>
         </div>
         <div class="row">
-            <button type="submit" name="submit" id="submit" class="btn btn-default blue col-sm-4" value="submit" data-toggle="modal" data-target="#ConfirmationModal">Submit</button>
+            <button type="submit" name="submit" id="submit" class="btn btn-default blue col-sm-4" value="submit">Submit</button>
 {{--            <a class="col-sm-6 btn btn-default btn-lg blue" type="submit" name="submit" id="submit">Submit</a>--}}
         </div>
     </form>
@@ -202,7 +202,7 @@
                     Your travel authorization form has been submitted
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary mbtn" data-dismiss="modal">Close</button>
+                    <a href="{{ url('/') }}" type="button" class="btn btn-primary mbtn" data-dismiss="modal">Close</a>
                     {{--                                <button type="button" class="btn btn-primary">Save changes</button>--}}
                 </div>
             </div>

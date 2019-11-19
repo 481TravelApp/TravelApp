@@ -29,8 +29,9 @@ class MailController extends Controller
         $to = "jasonsmith7@u.boisestate.edu";
         $subject = "Travel Authorization Request";
         $message = "";
+        $cc = "CC: nathandsteele@gmail.com, jtsmithers@gmail.com";
         $headers = "From: do_not_reply@boisestate.edu" . "\r\n" .
-            "CC: nathandsteele@gmail.com" . "\r\n" .
+            $cc . "\r\n" .
             'X-Mailer: PHP/' . phpversion();
 //        $headers = "From: do_not_reply@boisestate.edu" . "\r\n" .
 //            'X-Mailer: PHP/' . phpversion();
@@ -89,6 +90,12 @@ class MailController extends Controller
 
 
         error_log(mail($to, $subject, $message, $headers));
-        return view('welcome');
+//        return view('welcome');
+//        $note = "Your information has been sent! You will receive a confirmation email shortly. You will be contacted via that email thread by
+//        administrative personnel should any more information be needed.";
+//        echo "<script type='text/javascript'>alert('$note');</script>";
+//        return 1;
+//        return "<script type='text/javascript'>alert('$note');</script>";
+        return view('success');
     }
 }
