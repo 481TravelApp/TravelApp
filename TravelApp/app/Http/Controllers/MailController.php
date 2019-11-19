@@ -29,7 +29,7 @@ class MailController extends Controller
         $to = "jasonsmith7@u.boisestate.edu";
         $subject = "Travel Authorization Request";
         $message = "";
-        $cc = "CC: nathandsteele@gmail.com, jtsmithers@gmail.com";
+        $cc = "CC: nathandsteele@gmail.com, jtsmithers@gmail.com, justinstiffler@u.boisestate.edu, ianhooyboer@u.boisestate.edu";
         $headers = "From: do_not_reply@boisestate.edu" . "\r\n" .
             $cc . "\r\n" .
             'X-Mailer: PHP/' . phpversion();
