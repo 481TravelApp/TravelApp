@@ -39,9 +39,12 @@
     @include('includes.head')
 </head>
 <header class="header-custom">
-    <div class="logo">
+    <div class="logo1">
+            <div class="logo">
+                <a href="{{url('welcome')}}"></a>
+            </div>
             <img id="banner" src="/images/boisestate-leftalignedmark-orange.png">
-            <a href="{{url('welcome')}}"></a>
+
     </div>
 </header>
 <body class="">
