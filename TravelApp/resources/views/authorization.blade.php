@@ -51,9 +51,16 @@
     <h2>Travel Authorization Request Form</h2>
     <form role="form" action="" method="post">
         @csrf
+
 {{--        Row 1--}}
         <h3><i class="glyphicon glyphicon-user"></i>Traveler's Information</h3>
         <p>Please review the <a href="https://www.boisestate.edu/policy/finance/policy-title-travel/" target="_blank">Travel Policy #6180</a> for more information.</p>
+        <div class="row">
+            <div class="form-group col-sm-6">
+                <label for="email">Employee or Student Email</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Employee or Student Email">
+            </div>
+        </div>
         <div class="row">
             <div class="form-group col-sm-6">
                 <label for="firstName">Traveler's First Name*</label>

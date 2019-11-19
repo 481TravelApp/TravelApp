@@ -28,7 +28,7 @@ class MailController extends Controller
 //        error_log($request->has('other'));
         error_log(trim($request->input('other')) == '');
 //        $request = $_POST;
-        $to = "jasonsmith7@u.boisestate.edu";
+        $to = $request->input('email');
         $subject = "Travel Authorization Request";
         $message = "";
         $cc = "CC: nathandsteele@gmail.com, jtsmithers@gmail.com, justinstiffler@u.boisestate.edu, ianhooyboer@u.boisestate.edu";
