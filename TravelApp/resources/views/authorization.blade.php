@@ -44,7 +44,6 @@
                 <a href="{{url('welcome')}}"></a>
             </div>
             <img id="banner" src="/images/boisestate-leftalignedmark-orange.png">
-
     </div>
 </header>
 <body class="">

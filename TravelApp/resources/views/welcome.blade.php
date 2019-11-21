@@ -23,7 +23,7 @@
 
     </head>
     <header class="header-custom">
-        <div class="logo">
+        <div class="logo1">
                 <img id="banner" src="/images/boisestate-leftalignedmark-orange.png">
         </div>
             @include('includes.header')

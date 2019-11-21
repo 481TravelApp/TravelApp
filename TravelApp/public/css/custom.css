@@ -47,17 +47,28 @@
          /*font-weight: bolder;*/
      }
  }
+ .white {
+     color: white;
+ }
+
+ .navbar-img {
+     width: auto;
+     height: 100px;
+ }
 
 .links > a {
     /*color: #636b6f;*/
+    position: relative;
     color: white;
     padding: 0 25px;
     font-size: 16px;
     /*font-weight: 700;*/
     letter-spacing: .2rem;
     text-decoration: none;
+    z-index: 8;
     /*text-transform: uppercase;*/
 }
+
 .blue {
     background-color: #0033a0;
     border-color: #d64309;
@@ -195,14 +206,18 @@
      display: none;
  }
  .logo {
-     /*height: 100px;*/
-     /*width: 300px;*/
-     float: left;
+     width: auto;
+     height: 100px;
+     margin-top: -20px;
+     margin-left: -20px;
  }
 
  .logo1 {
-     width: 50px;
-     height: 50px;
+     width: auto;
+     float: left;
+     height: 100px;
+
+
  }
 
 #banner {
@@ -213,5 +228,5 @@
     width: auto;
     height: 100px;
     max-height: 100px;
-    z-index: 5;
+    z-index: 1;
 }
