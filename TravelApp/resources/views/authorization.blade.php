@@ -40,9 +40,7 @@
 </head>
 <header class="header-custom">
     <div class="logo1">
-            <div class="logo">
-                <a href="{{url('welcome')}}"></a>
-            </div>
+            <a href="{{url('/')}}"></a>
             <img id="banner" src="/images/boisestate-leftalignedmark-orange.png">
     </div>
 </header>
