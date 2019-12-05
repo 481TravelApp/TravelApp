@@ -51,7 +51,7 @@
 <div class="bootsrap-iso container fpad">
     <a href="{{ url('welcome') }}">Back to Welcome Page</a>
     <h2>Travel Authorization Request Form</h2>
-    <form role="form" action="" method="post">
+    <form role="form" action="" method="post" novalidate>
         @csrf
 
 {{--        Row 1--}}
