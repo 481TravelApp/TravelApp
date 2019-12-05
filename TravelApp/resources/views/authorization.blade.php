@@ -60,18 +60,28 @@
         <div class="row">
             <div class="form-group col-sm-6">
                 <label for="email">Employee or Student Email</label>
-                <input type="email" class="form-control" name="email" id="email" placeholder="Employee or Student Email">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Employee or Student Email" required>
+            </div>
+            <div class="invalid-feedback">
+                Please enter email.
             </div>
         </div>
         <div class="row">
             <div class="form-group col-sm-6">
                 <label for="firstName">Traveler's First Name*</label>
-                <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Enter First Name">
+                <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Enter First Name" required>
+            </div>
+            <div class="invalid-feedback">
+                Please enter first name.
             </div>
             <div class="form-group col-sm-6">
                 <label for="lastName">Traveler's Last Name*</label>
-                <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Enter Last Name">
-            </div></div>
+                <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Enter Last Name" required>
+            </div>
+            <div class="invalid-feedback">
+                Please enter last name.
+            </div>
+        </div>
 {{--        Row 2--}}
         <div class="row">
             <div class="form-group col-sm-6">
