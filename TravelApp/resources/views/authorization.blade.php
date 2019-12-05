@@ -51,7 +51,7 @@
 <div class="bootsrap-iso container fpad">
     <a href="{{ url('welcome') }}">Back to Welcome Page</a>
     <h2>Travel Authorization Request Form</h2>
-    <form role="form" action="" method="post" novalidate>
+    <form role="form" action="" method="post">
         @csrf
 
 {{--        Row 1--}}
@@ -62,41 +62,32 @@
                 <label for="email">Employee or Student Email</label>
                 <input type="email" class="form-control" name="email" id="email" placeholder="Employee or Student Email" required>
             </div>
-            <div class="invalid-feedback">
-                Please enter email.
-            </div>
         </div>
         <div class="row">
             <div class="form-group col-sm-6">
                 <label for="firstName">Traveler's First Name*</label>
                 <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Enter First Name" required>
             </div>
-            <div class="invalid-feedback">
-                Please enter first name.
-            </div>
             <div class="form-group col-sm-6">
                 <label for="lastName">Traveler's Last Name*</label>
                 <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Enter Last Name" required>
-            </div>
-            <div class="invalid-feedback">
-                Please enter last name.
             </div>
         </div>
 {{--        Row 2--}}
         <div class="row">
             <div class="form-group col-sm-6">
                 <label for="empID">Traveler's Employee ID*</label>
-                <input type="number" class="form-control" name="empID" id="empID" placeholder="Enter Employee ID">
+                <input type="number" class="form-control" name="empID" id="empID" placeholder="Enter Employee ID" required>
             </div>
             <div class="form-group col-sm-6">
                 <label for="dept">Traveler's Department:</label>
-                <input type="text" class="form-control" name="dept" id="dept" placeholder="Enter Department">
+                <input type="text" class="form-control" name="dept" id="dept" placeholder="Enter Department" required>
             </div></div>
 {{--        Row 3--}}
         <div class="row">
             <div class="form-group col-sm-6">
                 <label for="empLoc">Traveler's Location:</label>
-                <input type="text" class="form-control" name="location" id="empLoc" placeholder="City, State, Country">
+                <input type="text" class="form-control" name="location" id="empLoc" placeholder="City, State, Country" required>
 {{--                <label>City, State, Country</label>--}}
             </div>
             <div class="form-group col-sm-6">
@@ -107,7 +98,7 @@
         <div class="row">
             <div class="form-group col-sm-12">
                 <label for="empID">Travel Business Purpose:</label>
-                <textarea type="email" class="form-control" name="purpose" id="purpose" placeholder="Enter Purpose of Travel" rows="3"></textarea>
+                <textarea type="email" class="form-control" name="purpose" id="purpose" placeholder="Enter Purpose of Travel" rows="3" required></textarea>
             </div></div>
         <hr>
         <h3><i class="glyphicon glyphicon-plane"></i>  Trip Information</h3>
