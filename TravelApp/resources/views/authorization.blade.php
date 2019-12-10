@@ -1,29 +1,5 @@
 <?php
-////if(isset($_POST['submit'])){
-////    console.log("yo");
-////    $to = "jasonsmith7@u.boisestate.edu@";
-////    $subject = "My subject";
-////    $txt = "Hello world!";
-////    $headers = "From: do_not_reply@boisestate.edu" . "\r\n" . "CC: nathandsteele@gmail.com";
-////    ​mail($to,$subject,$txt,$headers);
-////    }
-////
-//
-//if(isset($_POST['submit']))
-//{
-//    $to      = 'jtsmithers@gmail.com';
-//    $subject = 'the subject';
-//    $message = 'hello';
-//    $headers = 'From: do_not_reply@boisestate.edu' . "\r\n" .
-//        'Reply-To: do_not_reply@boisestate.edu' . "\r\n" .
-//        'X-Mailer: PHP/' . phpversion();
-//
-//    mail($to, $subject, $message, $headers);
-//
-//    echo 'Email Sent.';
-//}
-//
-//?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -203,10 +179,6 @@
             <div class="modal-content orange">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Success</h5>
-{{--                    <h3>See Your Trips</h3>--}}
-{{--                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">--}}
-{{--                        <span aria-hidden="true">&times;</span>--}}
-{{--                    </button>--}}
                 </div>
                 <div class="modal-body">
                     Your travel authorization form has been submitted

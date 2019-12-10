@@ -1,9 +1,7 @@
  html, body {
      background-color: #fff;
      color: #1d2124;
-     /*font-family: 'Nunito', sans-serif;*/
      font-family: 'Source Sans Pro', sans-serif;
-     /*font-weight: 300;*/
      height: 100vh;
      margin: 0;
  }
@@ -38,13 +36,11 @@
     font-max-size: 50px;
     max-font-size: 50px;
     color: #0033a0;
-    /*font-weight: bolder;*/
 }
  @media screen and (min-width: 1200px) {
      .title {
          font-size: 50px;
          color: #0033a0;
-         /*font-weight: bolder;*/
      }
  }
  .white {
@@ -57,16 +53,13 @@
  }
 
 .links > a {
-    /*color: #636b6f;*/
     position: relative;
     color: white;
     padding: 0 25px;
     font-size: 16px;
-    /*font-weight: 700;*/
     letter-spacing: .2rem;
     text-decoration: none;
     z-index: 8;
-    /*text-transform: uppercase;*/
 }
 
 .blue {
@@ -91,7 +84,6 @@
     margin: 30px auto;
     padding: 10%;
     min-width: 250px;
-    /*margin-top: 15%;*/
 }
 .modal-header {
     border: none;
@@ -115,14 +107,12 @@
     font-size: 3vh;
 }
 .orange {
-    /*background-color: #d64309;*/
     background-color: white;
     opacity: .95;
     border-color: #0033a0;
     color: #0033a0;
 }
 .background {
-    /*background-image: url('/images/bsu_logo.png');*/
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position-x: 50%;
@@ -151,74 +141,44 @@
     width: 70%;
 }
 .header-custom {
-    /*background-image: url('/images/boisestate-leftalignedmark-blue-whiteoutline.png');*/
-    /*background-image: url('/images/boisestate-leftalignedmark-orange.png');*/
-
     height: 100px;
-    /*background-repeat: no-repeat;*/
-    /*background-attachment: fixed;*/
-    /*background-position-x: 50%;*/
-    /*background-size: 25%;*/
     background-color: #0033a0;
     max-height: 80px;
-    /*margin-right: -300px;*/
-    /*margin-left: -300px;*/
-    /*width: 100%;*/
-    /*min-width: 100%;*/
     overflow: hidden;
-}
-.container {
-    /*width: 100%;*/
-    /*padding-left: 0px;*/
-    /*padding-right: 0px;*/
 }
 .spacing {
     margin-top: 5%;
 }
+.blue {
+  background-color: #0033a0;
+  color: white;
+}
+.green {
+ background-color: #4bb543;
+ color: white;
+}
+.busDates {
+ display: none;
+}
 
+.fpad {
+ padding: 20px;
+}
+.estimates {
+ display: none;
+}
+.logo {
+ width: auto;
+ height: 100px;
+ margin-top: -20px;
+ margin-left: -20px;
+}
 
-  .blue {
-      background-color: #0033a0;
-      color: white;
-  }
- .green {
-     background-color: #4bb543;
-     color: white;
- }
- /*.background-auth {*/
- /*    background-image: url('/images/bsu_logo.png');*/
- /*    background-repeat: no-repeat;*/
- /*    background-attachment: fixed;*/
- /*    background-position-x: 50%;*/
- /*    background-position-y: 50%;*/
- /*    background-size: 50%;*/
- /*    background-color: rgba(255, 255, 255, 0.9);*/
- /*    background-blend-mode: color-dodge;*/
- /*}*/
- .busDates {
-     display: none;
- }
-
- .fpad {
-     padding: 20px;
- }
- .estimates {
-     display: none;
- }
- .logo {
-     width: auto;
-     height: 100px;
-     margin-top: -20px;
-     margin-left: -20px;
- }
-
- .logo1 {
-     width: auto;
-     float: left;
-     height: 100px;
-
-
- }
+.logo1 {
+ width: auto;
+ float: left;
+ height: 100px;
+}
 
 #banner {
     position: relative;

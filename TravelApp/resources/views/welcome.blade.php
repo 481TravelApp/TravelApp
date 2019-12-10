@@ -29,9 +29,6 @@
             @include('includes.header')
     </header>
     <body class="">
-{{--            <div>--}}
-{{--                <img src="{{URL('/images/bsu_logo.png')}}" alt="bsu logo" style="max-width: 400px; top: 0; left: 0; opacity: .3; background-position: center; position: ; z-index: 1;">--}}
-{{--            </div>--}}
             <div class="container content spacing">
 
                 <div class="row">
@@ -51,7 +48,6 @@
                 <div class="row">
                     <button class="col btn btn-secondary btn-lg orange-inactive" type="button" id="seeTrips" data-toggle="modal" data-target="#TripModal">
                         See your trips
-{{--                        <span class="tooltiptext">Here you will be able to see your previous and current trips, view itinerary, and other trip information</span>--}}
                     </button>
                 </div>
                 <div class="row">
@@ -80,7 +76,6 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-primary mbtn" data-dismiss="modal">Close</button>
-                                {{--                                <button type="button" class="btn btn-primary">Save changes</button>--}}
                             </div>
                         </div>
                     </div>
@@ -102,7 +97,6 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-primary mbtn" data-dismiss="modal">Close</button>
-                                {{--                                <button type="button" class="btn btn-primary">Save changes</button>--}}
                             </div>
                         </div>
                     </div>
@@ -124,7 +118,6 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-primary mbtn" data-dismiss="modal">Close</button>
-                                {{--                                <button type="button" class="btn btn-primary">Save changes</button>--}}
                             </div>
                         </div>
                     </div>

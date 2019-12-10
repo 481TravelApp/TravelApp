@@ -8,39 +8,19 @@ use Illuminate\Http\Request;
 class MailController extends Controller
 {
     /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-//    public function __construct()
-//    {
-//        $this->middleware('auth');
-//    }
-
-    /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function sendMail(Request $request)
     {
-        error_log('post');
-//        error_log($request->has('other'));
-        error_log(trim($request->input('other')) == '');
-//        $request = $_POST;
         $to = $request->input('email');
         $subject = "Travel Authorization Request";
         $message = "";
-        $cc = "CC: nathandsteele@gmail.com, jtsmithers@gmail.com, justinstiffler@u.boisestate.edu, ianhooyboer@u.boisestate.edu";
+        $cc = "CC: CMGT@boisestate.edu";
         $headers = "From: do_not_reply@boisestate.edu" . "\r\n" .
             $cc . "\r\n" .
             'X-Mailer: PHP/' . phpversion();
-//        $headers = "From: do_not_reply@boisestate.edu" . "\r\n" .
-//            'X-Mailer: PHP/' . phpversion();
-
-//        error_log($request->input('firstName'));
-//        $out = new \Symfony\Component\Console\Output\ConsoleOutput();
-//        $out->writeln("Hello from Terminal");
 
         $first_name = $request->input('firstName');
         $last_name = $request->input('lastName');
@@ -62,7 +42,7 @@ class MailController extends Controller
         $baggage = $request->input('baggage');
         $parking = $request->input('parking');
         $other = $request->input('other');
-//
+
         $message .= "First Name: ".$first_name."\n";
         $message .= "Last Name: ".$last_name."\n";
         $message .= "Employee ID: ".$emp_id."\n";
@@ -72,8 +52,8 @@ class MailController extends Controller
         $message .= "Travel Business Purpose: "."\n\n".$purpose."\n\n";
         $message .= "Travel Begin Date: ".$start_date."\n";
         $message .= "Travel End Date: ".$end_date."\n";
-
         $message .= "Is personal travel scheduled in conjunction with business travel: ".$reason."\n";
+
         if (trim($reason) == 'Yes') {
             $message .= "Business Travel Begin Date: " . $bus_start . "\n";
             $message .= "Business Travel End Date: " . $bus_end . "\n";
@@ -92,16 +72,6 @@ class MailController extends Controller
 
         $subject .= " [".$first_name." ".$last_name."]";
 
-        error_log($message);
-
-
-        error_log(mail($to, $subject, $message, $headers));
-//        return view('welcome');
-//        $note = "Your information has been sent! You will receive a confirmation email shortly. You will be contacted via that email thread by
-//        administrative personnel should any more information be needed.";
-//        echo "<script type='text/javascript'>alert('$note');</script>";
-//        return 1;
-//        return "<script type='text/javascript'>alert('$note');</script>";
         return view('success');
     }
 }
