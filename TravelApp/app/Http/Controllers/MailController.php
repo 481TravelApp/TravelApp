@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class MailController extends Controller
 {
+
     /**
      * Show the application dashboard.
      *
@@ -52,8 +53,8 @@ class MailController extends Controller
         $message .= "Travel Business Purpose: "."\n\n".$purpose."\n\n";
         $message .= "Travel Begin Date: ".$start_date."\n";
         $message .= "Travel End Date: ".$end_date."\n";
-        $message .= "Is personal travel scheduled in conjunction with business travel: ".$reason."\n";
 
+        $message .= "Is personal travel scheduled in conjunction with business travel: ".$reason."\n";
         if (trim($reason) == 'Yes') {
             $message .= "Business Travel Begin Date: " . $bus_start . "\n";
             $message .= "Business Travel End Date: " . $bus_end . "\n";
@@ -71,6 +72,8 @@ class MailController extends Controller
         }
 
         $subject .= " [".$first_name." ".$last_name."]";
+
+        error_log(mail($to, $subject, $message, $headers));
 
         return view('success');
     }
