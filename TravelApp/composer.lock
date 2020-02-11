@@ -21,6 +21,8 @@
                 "shasum": ""
             },
             "require": {
+                "symfony/mime": "4.3.8"
+                "symfony/http-foundation": "4.3.8"
                 "php": ">=5.3.2"
             },
             "require-dev": {
