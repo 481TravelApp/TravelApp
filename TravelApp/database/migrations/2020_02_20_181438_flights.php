@@ -20,6 +20,7 @@ class Flights extends Migration
             $table->string('flight_num')->nullable();
             $table->dateTime('depart');
             $table->dateTime('arrival');
+            $table->unsignedBigInteger('trip_id');
             $table->foreign('trip_id')->references('id')->on('trips');
         });
     }

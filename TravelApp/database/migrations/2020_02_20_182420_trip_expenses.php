@@ -15,12 +15,14 @@ class TripExpenses extends Migration
     {
         Schema::create('trip_expenses', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->foreign('trip_id')->references('id')->on('trips');
+            $table->unsignedBigInteger('trip_id');
             $table->string('per_diem');
             $table->integer('flight_num');
             $table->string('baggage')->nullable();
             $table->string('lodging');
             $table->string('transportation')->nullable();
+
+            $table->foreign('trip_id')->references('id')->on('trips');
         });
     }
 

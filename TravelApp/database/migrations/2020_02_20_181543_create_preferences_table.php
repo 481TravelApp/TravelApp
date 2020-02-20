@@ -15,7 +15,7 @@ class CreatePreferencesTable extends Migration
     {
         Schema::create('preferences', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('user_id');
             $table->string('airline');
             $table->bigInteger('preffly_num');
             $table->timestamp('depart_time');
@@ -27,6 +27,8 @@ class CreatePreferencesTable extends Migration
             $table->string('admin_email');
             $table->string('dup_email');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
