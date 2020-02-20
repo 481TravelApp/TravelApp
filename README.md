@@ -14,6 +14,25 @@ Prerequisites:
 
 The installation process for the above prerequisites is platform dependent.
 
+### 0. Configuring PHP on Onyx
+Onyx is configured to use an older version of PHP from the command line by
+default. However, a newer version is installed and available for use. It
+is located at
+
+    /opt/rh/rh-php73/
+
+To configure Onyx to automatically use this version, add these 3 lines to
+.bash_profile
+
+    export PATH=/opt/rh/rh-php73/root/usr/bin:/opt/rh/rh-php73/root/usr/sbin${PATH:+:${PATH}}
+    export LD_LIBRARY_PATH=/opt/rh/rh-php73/root/usr/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+    export MANPATH=/opt/rh/rh-php73/root/usr/share/man:${MANPATH}
+
+If newer versions of PHP are installed this configuration may break and
+modules may need to be reinstalled (namely mbstring and pdo_sqlite). Should
+this occur contact the IT Systems Engineer (currently Ben Peterson) for
+help.
+
 ### 1. Install and enable php sqlite3 module
 Installation depends on the specific details of the PHP distribution being
 used. Enabling the module requires editing `php.ini` and adding the line
