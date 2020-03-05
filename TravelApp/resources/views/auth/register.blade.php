@@ -61,6 +61,14 @@
                             </div>
                         </div>
 
+                    <!--    <div class="form-group row">
+                            <label for="location" class="col-md-4 col-form-label text-md-right">{{ __('User Location') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="location" type="text" class="form-control" name="location" required autocomplete="location">
+                            </div>
+                        </div>-->
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

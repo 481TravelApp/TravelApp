@@ -15,15 +15,18 @@ class CreateTripsTable extends Migration
     {
         Schema::create('trips', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            //$table->unsignedBigInteger('user_id');
+            //$table->foreign('user_id')->references('id')->on('users');
             $table->string('destination');
+            $table->string('starting_location');
             $table->dateTime('start_date');
             $table->dateTime('end_date');
-            $table->string('hostel');
-            $table->boolean('rental');
+            //$table->string('hostel');
+            //$table->boolean('rental');
+            $table->boolean('reason');
+            $table->boolean('payer');
             $table->string('conference');
-            $table->string('business_purspose');
+            $table->string('business_purpose');
             $table->timestamps();
         });
     }

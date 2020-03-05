@@ -29,7 +29,6 @@
     <h2>Travel Authorization Request Form</h2>
     <form role="form" action="" method="post">
         @csrf
-
 {{--        Row 1--}}
         <h3><i class="glyphicon glyphicon-user"></i>Traveler's Information</h3>
         <p>Please review the <a href="https://www.boisestate.edu/policy/finance/policy-title-travel/" target="_blank">Travel Policy #6180</a> for more information.</p>
@@ -59,36 +58,39 @@
                 <label for="dept">Traveler's Department:</label>
                 <input type="text" class="form-control" name="dept" id="dept" placeholder="Enter Department" required>
             </div></div>
-{{--        Row 3--}}
+        <h3><i class="glyphicon glyphicon-plane"></i>  Trip Information</h3>
+{{--        Travel Date Row--}}
+        <div class="row">    
+            <div class="form-group col-sm-6">
+                <label for="destination">Travel Destination</label>
+                <input type="destination" class="form-control" name="destination" id="destination" placeholder="Travel Destination" required>
+            </div>
+        </div>
         <div class="row">
             <div class="form-group col-sm-6">
-                <label for="empLoc">Traveler's Location:</label>
-                <input type="text" class="form-control" name="location" id="empLoc" placeholder="City, State, Country" required>
-{{--                <label>City, State, Country</label>--}}
+                <label class="control-label" for="startDate">Travel Begin Date</label>
+                <input class="form-control" id="startDate" name="startDate" placeholder="MM/DD/YYY" type="text"/>
             </div>
             <div class="form-group col-sm-6">
-                <label for="dept">Search Term Keywords (Optional)</label>
-                <input type="text" class="form-control" name="keywords" id="keywords" placeholder="Enter Search Term Keywords">
+                <label class="control-label" for="endDate">Travel End Date</label>
+                <input class="form-control" id="endDate" name="endDate" placeholder="MM/DD/YYY" type="text"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-6">
+                <label for="empLoc">Starting Location:</label>
+                <input type="text" class="form-control" name="location" id="empLoc" placeholder="City, State, Country" required>
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="dept">Conference (Optional)</label>
+                <input type="text" class="form-control" name="conference" id="conference" placeholder="Is this for a conference? If so, which one?">
             </div></div>
-{{--        Row 4--}}
         <div class="row">
             <div class="form-group col-sm-12">
                 <label for="empID">Travel Business Purpose:</label>
                 <textarea type="email" class="form-control" name="purpose" id="purpose" placeholder="Enter Purpose of Travel" rows="3" required></textarea>
             </div></div>
         <hr>
-        <h3><i class="glyphicon glyphicon-plane"></i>  Trip Information</h3>
-{{--        Travel Date Row--}}
-        <div class="row">
-            <div class="form-group col-sm-6">
-                <label class="control-label" for="startDate">Travel Begin Date</label>
-                <input class="form-control" id="startDate" name="startDate" placeholder="MM/DD/YYY" type="text"/>
-                {{--                <label>City, State, Country</label>--}}
-            </div>
-            <div class="form-group col-sm-6">
-                <label class="control-label" for="endDate">Travel End Date</label>
-                <input class="form-control" id="endDate" name="endDate" placeholder="MM/DD/YYY" type="text"/>
-            </div></div>
         <div class="row">
             <div class="form-group col-sm-12">
             <label class="control-label" for="personalBusiness">Is personal travel scheduled in conjunction with business travel? *</label>

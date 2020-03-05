@@ -3,6 +3,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\MailController;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class MailController extends Controller
@@ -15,6 +17,7 @@ class MailController extends Controller
      */
     public function sendMail(Request $request)
     {
+        //Creation of the email information.
         $to = $request->input('email');
         $subject = "Travel Authorization Request";
         $message = "";
@@ -23,12 +26,18 @@ class MailController extends Controller
             $cc . "\r\n" .
             'X-Mailer: PHP/' . phpversion();
 
+        //User information
         $first_name = $request->input('firstName');
         $last_name = $request->input('lastName');
         $emp_id = $request->input('empID');
         $dept = $request->input('dept');
+        //$keywords = $request->input('keywords');
+
+        //Trip information
+        //Add destination
+        $destination = $request->input('destination');
+        $conference = $request->input('conference');
         $location = $request->input('location');
-        $keywords = $request->input('keywords');
         $purpose = $request->input('purpose');
         $start_date =  $request->input('startDate');
         $end_date = $request->input('endDate');
@@ -44,12 +53,18 @@ class MailController extends Controller
         $parking = $request->input('parking');
         $other = $request->input('other');
 
+        $creationDate = now();
+
+        $successBool = DB::insert('insert into trips (destination, starting_location, start_date, end_date, reason, payer, conference, business_purpose, created_at) values(?, ?, ?, ?, ?, ?, ?, ?, ?)',[$destination, $location, $start_date, $end_date, $reason, $payer, $conference, $purpose, $creationDate]);
+
+        if($successBool) {
+        //Email creation and sending
         $message .= "First Name: ".$first_name."\n";
         $message .= "Last Name: ".$last_name."\n";
         $message .= "Employee ID: ".$emp_id."\n";
         $message .= "Department: ".$dept."\n";
         $message .= "Location: ".$location."\n";
-        $message .= "Search Term Keywords: ".$keywords."\n\n";
+        //$message .= "Search Term Keywords: ".$keywords."\n\n";
         $message .= "Travel Business Purpose: "."\n\n".$purpose."\n\n";
         $message .= "Travel Begin Date: ".$start_date."\n";
         $message .= "Travel End Date: ".$end_date."\n";
@@ -73,8 +88,11 @@ class MailController extends Controller
 
         $subject .= " [".$first_name." ".$last_name."]";
 
-        error_log(mail($to, $subject, $message, $headers));
+        //error_log(mail($to, $subject, $message, $headers));
 
         return view('success');
+        } else {
+        return view('home');
+        }
     }
 }
