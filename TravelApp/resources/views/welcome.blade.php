@@ -50,13 +50,6 @@
                         See your trips
                     </button>
                 </div>
-
-
-                <!--SCRATCH WORK FOR AUTHORIZATION BUTTON -->
-                <div class="row">
-                    <a href="{{ url('/authentication') }}" class="col btn btn-primary btn-lg blue" type="button" id="newRequest">Authorization</a>
-                </div>
-                <!--SCRATCH WORK FOR AUTHORIZATION BUTTON -->
             
 
                 <div class="row">
