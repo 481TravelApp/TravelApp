@@ -17,22 +17,6 @@ class MailController extends Controller
      */
     public function sendMail(Request $request)
     {
-        //Creation of the email information.
-        $to = $request->input('email');
-        $subject = "Travel Authorization Request";
-        $message = "";
-        $cc = "CC: CMGT@boisestate.edu";
-        $headers = "From: CMGT@boisestate.edu" . "\r\n" .
-            $cc . "\r\n" .
-            'X-Mailer: PHP/' . phpversion();
-
-        //User information
-        $first_name = $request->input('firstName');
-        $last_name = $request->input('lastName');
-        $emp_id = $request->input('empID');
-        $dept = $request->input('dept');
-        //$keywords = $request->input('keywords');
-
         //Trip information
         //Add destination
         $destination = $request->input('destination');
@@ -53,11 +37,31 @@ class MailController extends Controller
         $parking = $request->input('parking');
         $other = $request->input('other');
 
-        $creationDate = now();
+        $creationDate = now(); // Hacky solution.
 
-        $successBool = DB::insert('insert into trips (destination, starting_location, start_date, end_date, reason, payer, conference, business_purpose, created_at) values(?, ?, ?, ?, ?, ?, ?, ?, ?)',[$destination, $location, $start_date, $end_date, $reason, $payer, $conference, $purpose, $creationDate]);
+        $user = $request->user();
+        $idKeyValue = $user->id;
+
+        $successBool = DB::insert('insert into trips (user_id, destination, starting_location, start_date, end_date, reason, payer, conference, business_purpose, created_at) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',[$idKeyValue, $destination, $location, $start_date, $end_date, $reason, $payer, $conference, $purpose, $creationDate]);
 
         if($successBool) {
+
+        //Creation of the email information.
+        $to = $request->input('email');
+        $subject = "Travel Authorization Request";
+        $message = "";
+        $cc = "CC: CMGT@boisestate.edu";
+        $headers = "From: CMGT@boisestate.edu" . "\r\n" .
+            $cc . "\r\n" .
+            'X-Mailer: PHP/' . phpversion();
+
+        //User information
+        $first_name = $request->input('firstName');
+        $last_name = $request->input('lastName');
+        $emp_id = $request->input('empID');
+        $dept = $request->input('dept');
+        //$keywords = $request->input('keywords');
+
         //Email creation and sending
         $message .= "First Name: ".$first_name."\n";
         $message .= "Last Name: ".$last_name."\n";

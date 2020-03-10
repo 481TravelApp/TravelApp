@@ -1,4 +1,8 @@
 <?php
+
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
+
 ?>
 
 <!DOCTYPE html>
@@ -35,28 +39,28 @@
         <div class="row">
             <div class="form-group col-sm-6">
                 <label for="email">Employee or Student Email</label>
-                <input type="email" class="form-control" name="email" id="email" placeholder="Employee or Student Email" required>
+                <input type="email" class="form-control" name="email" id="email" value="{{ $dbInfo['email'] }}" required readonly>
             </div>
         </div>
         <div class="row">
             <div class="form-group col-sm-6">
                 <label for="firstName">Traveler's First Name*</label>
-                <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Enter First Name" required>
+                <input type="text" class="form-control" name="firstName" id="firstName" value="{{ $dbInfo['first_name'] }}" required readonly>
             </div>
             <div class="form-group col-sm-6">
                 <label for="lastName">Traveler's Last Name*</label>
-                <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Enter Last Name" required>
+                <input type="text" class="form-control" name="lastName" id="lastName" value="{{ $dbInfo['last_name'] }}" required readonly>
             </div>
         </div>
 {{--        Row 2--}}
         <div class="row">
             <div class="form-group col-sm-6">
                 <label for="empID">Traveler's Employee ID*</label>
-                <input type="number" class="form-control" name="empID" id="empID" placeholder="Enter Employee ID" required>
+                <input type="number" class="form-control" name="empID" id="empID" value="{{ $dbInfo['BSU_id'] }}" required readonly>
             </div>
             <div class="form-group col-sm-6">
                 <label for="dept">Traveler's Department:</label>
-                <input type="text" class="form-control" name="dept" id="dept" placeholder="Enter Department" required>
+                <input type="text" class="form-control" name="dept" id="dept" value="{{ $dbInfo['department'] }}" required readonly>
             </div></div>
         <h3><i class="glyphicon glyphicon-plane"></i>  Trip Information</h3>
 {{--        Travel Date Row--}}
@@ -110,11 +114,11 @@
 {{--        Business Travel Dates--}}
         <div class="row busDates" id="busDates">
             <div class="form-group col-sm-6">
-                <label class="control-label" for="busStartDate">Travel Begin Date</label>
+                <label class="control-label" for="busStartDate">Business Begin Date</label>
                 <input class="form-control" id="busStartDate" name="busStartDate" placeholder="MM/DD/YYY" type="text"/>
             </div>
             <div class="form-group col-sm-6">
-                <label class="control-label" for="busEndDate">Travel End Date</label>
+                <label class="control-label" for="busEndDate">Business End Date</label>
                 <input class="form-control" id="busEndDate" name="busEndDate" placeholder="MM/DD/YYY" type="text"/>
             </div></div>
         <div class="row">
