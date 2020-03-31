@@ -45,85 +45,28 @@
                         <a href="{{ url('/login') }}" class="col btn btn-primary btn-lg blue" type="button" id="newRequest">Submit a new travel request</a>
                     </div>
                 @endguest
-                <div class="row">
-                    <button class="col btn btn-secondary btn-lg orange-inactive" type="button" id="seeTrips" data-toggle="modal" data-target="#TripModal">
-                        See your trips
-                    </button>
-                </div>
-            
-
-                <div class="row">
-                <button class="col btn btn-secondary btn-lg orange-inactive" type="button" id="reviewEdit" data-toggle="modal" data-target="#ReviewModal">
-                    Review/Edit upcoming travel
-                </button>
-                </div>
-                <div class="row">
-                <button class="col btn btn-secondary btn-lg orange-inactive" type="button" id="enterInfo" data-toggle="modal" data-target="#ReportModal">
-                    Enter info while traveling
-                </button>
-                </div>
-                {{--                See Your Trips Modal--}}
-                <div class="modal fade" id="TripModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content orange">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">COMING SOON!!</h5>
-                                <h3>See Your Trips</h3>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                Here you will be able to see your previous and current trips, view itinerary, and other trip information!
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary mbtn" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
+				
+				@auth
+                    <div class="row">
+                        <a href="{{ url('/trips/') }}" class="col btn btn-primary btn-lg blue" type="button" id="newRequest">See or Edit your trips</a>
                     </div>
-                </div>
-                {{--                Review/Edit Upcoming Travel Modal--}}
-                <div class="modal fade" id="ReviewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content orange">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">COMING SOON!!</h5>
-                                <h3>Review/Edit Upcoming Travel</h3>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                Here you will be able to view and edit upcoming trips that you have planned. Trip information will be available for
-                                your reference and you will be able to make changes and submit for approval.
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary mbtn" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
+                @endauth
+                @guest
+                    <div class="row">
+                        <a href="{{ url('/login') }}" class="col btn btn-primary btn-lg blue" type="button" id="newRequest">See or Edit your trips</a>
                     </div>
-                </div>
-                {{--                Report Modal--}}
-                <div class="modal fade" id="ReportModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content orange">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">COMING SOON!!</h5>
-                                <h3>Enter Info While Traveling</h3>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                Here you will be able to enter information about your travel. Track expenses, log meals, and make note of any
-                                information that is required for reporting.
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary mbtn" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
+                @endguest
+				
+				@auth
+                    <div class="row">
+                        <a href="{{ url('/upload/') }}" class="col btn btn-primary btn-lg blue" type="button" id="newRequest">Enter info while traveling</a>
                     </div>
-                </div>
+                @endauth
+                @guest
+                    <div class="row">
+                        <a href="{{ url('/login') }}" class="col btn btn-primary btn-lg blue" type="button" id="newRequest">Enter info while traveling</a>
+                    </div>
+                @endguest
             </div>
     </body>
 </html>

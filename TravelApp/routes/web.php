@@ -20,6 +20,16 @@ Route::get('/success', function() {
 });
 Auth::routes();
 
+Route::get('/trips', function() {
+    return view('trips');
+});
+Auth::routes();
+
+Route::get('/upload', function() {
+    return view('upload');
+});
+Auth::routes();
+
 Route::get('/welcome', function()
 {
     return View::make('welcome');
