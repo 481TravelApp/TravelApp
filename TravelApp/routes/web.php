@@ -51,3 +51,6 @@ Route::post('/mytrip', 'MyTripController@updateTrip');
 Route::get('/upload', 'UploadListController@loadPage');
 Route::get('/docupload', 'DocumentUploadController@loadPage');
 Route::post('/docupload', 'DocumentUploadController@uploadFile')->name('file.upload.post');
+
+Route::get('/openid', 'HomeController@openid');
+Route::post('/openidredirect', 'HomeController@openidredirect');

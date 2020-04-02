@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "65ebafd8da5d5b0bd8b11c6b1526793b",
+    "content-hash": "8f5fbfd338d1a3131e8cf57e9e739d13",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -424,16 +424,16 @@
         },
         {
             "name": "jumbojett/openid-connect-php",
-            "version": "v0.8.0",
+            "version": "v0.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jumbojett/OpenID-Connect-PHP.git",
-                "reference": "08c29b063803538f345183b66ac05cff7ed6eb9b"
+                "reference": "87eefea40abd9cea0290aa9b6cdb314fd0037fe2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jumbojett/OpenID-Connect-PHP/zipball/08c29b063803538f345183b66ac05cff7ed6eb9b",
-                "reference": "08c29b063803538f345183b66ac05cff7ed6eb9b",
+                "url": "https://api.github.com/repos/jumbojett/OpenID-Connect-PHP/zipball/87eefea40abd9cea0290aa9b6cdb314fd0037fe2",
+                "reference": "87eefea40abd9cea0290aa9b6cdb314fd0037fe2",
                 "shasum": ""
             },
             "require": {
@@ -441,6 +441,10 @@
                 "ext-json": "*",
                 "php": ">=5.4",
                 "phpseclib/phpseclib": "~2.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8",
+                "roave/security-advisories": "dev-master"
             },
             "type": "library",
             "autoload": {
@@ -453,7 +457,7 @@
                 "Apache-2.0"
             ],
             "description": "Bare-bones OpenID Connect client",
-            "time": "2019-01-02T19:05:13+00:00"
+            "time": "2020-03-09T13:26:39+00:00"
         },
         {
             "name": "laravel/framework",

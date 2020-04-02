@@ -10,7 +10,7 @@
     "require": {
         "php": "^7.1",
         "fideloper/proxy": "^4.0",
-        "jumbojett/openid-connect-php": "^0.8.0",
+        "jumbojett/openid-connect-php": "^0.9.0",
         "laravel/framework": "^6.2",
         "laravel/tinker": "^1.0",
         "laravel/ui": "^1.1"
