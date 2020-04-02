@@ -46,3 +46,4 @@ Route::get('/authorization', 'TripViewController@loadPage');
 
 Route::get('/trips', 'TripListController@loadPage');
 Route::get('/mytrip', 'MyTripController@loadPage');
+Route::post('/mytrip', 'MyTripController@updateTrip');

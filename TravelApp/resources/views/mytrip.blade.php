@@ -35,41 +35,11 @@ use Illuminate\Http\Request;
     <h2>Travel Authorization Request Form</h2>
     <form role="form" action="" method="post">
         @csrf
-<!-- {{--        Row 1--}}
-        <h3><i class="glyphicon glyphicon-user"></i>Traveler's Information</h3>
-        <p>Please review the <a href="https://www.boisestate.edu/policy/finance/policy-title-travel/" target="_blank">Travel Policy #6180</a> for more information.</p>
-        <div class="row">
-            <div class="form-group col-sm-6">
-                <label for="email">Employee or Student Email</label>
-                <input type="email" class="form-control" name="email" id="email" value="{{ $dbInfo['email'] }}" required readonly>
-            </div>
-        </div>
-        <div class="row">
-            <div class="form-group col-sm-6">
-                <label for="firstName">Traveler's First Name*</label>
-                <input type="text" class="form-control" name="firstName" id="firstName" value="{{ $dbInfo['first_name'] }}" required readonly>
-            </div>
-            <div class="form-group col-sm-6">
-                <label for="lastName">Traveler's Last Name*</label>
-                <input type="text" class="form-control" name="lastName" id="lastName" value="{{ $dbInfo['last_name'] }}" required readonly>
-            </div>
-        </div>
-{{--        Row 2--}}
-        <div class="row">
-            <div class="form-group col-sm-6">
-                <label for="empID">Traveler's Employee ID*</label>
-                <input type="number" class="form-control" name="empID" id="empID" value="{{ $dbInfo['BSU_id'] }}" required readonly>
-            </div>
-            <div class="form-group col-sm-6">
-                <label for="dept">Traveler's Department:</label>
-                <input type="text" class="form-control" name="dept" id="dept" value="{{ $dbInfo['department'] }}" required readonly>
-            </div></div>
-        <h3><i class="glyphicon glyphicon-plane"></i>  Trip Information</h3> -->
 {{--        Travel Date Row--}}
         <div class="row">    
             <div class="form-group col-sm-6">
                 <label for="destination">Travel Destination</label>
-                <input type="destination" class="form-control" name="destination" id="destination" value="{{ $dbInfo['destination'] }}" required>
+                <input type="destination" class="form-control" name="destination" value="{{ $dbInfo['destination'] }}" placeholder="Travel Destination" required>
             </div>
         </div>
         <div class="row">
@@ -94,20 +64,20 @@ use Illuminate\Http\Request;
         <div class="row">
             <div class="form-group col-sm-12">
                 <label for="empID">Travel Business Purpose:</label>
-                <textarea type="email" class="form-control" name="purpose" id="purpose" value="{{ $dbInfo['business_purpose'] }}" rows="3" required></textarea>
+                <textarea type="email" class="form-control" name="purpose" id="purpose" rows="3" required>{{$dbInfo['business_purpose']}}</textarea>
             </div></div>
         <hr>
         <div class="row">
             <div class="form-group col-sm-12">
             <label class="control-label" for="personalBusiness">Is personal travel scheduled in conjunction with business travel? *</label>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="reason" id="exampleRadios1" value="Yes" onclick="hide()">
+                    <input class="form-check-input" type="radio" name="reason" id="exampleRadios1" value="Yes" onclick="hide()"<?php if($dbInfo['reason']=="Yes"){ echo 'checked'; } ?>>
                     <label class="form-check-label" for="exampleRadios1">
                         Yes
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="reason" id="exampleRadios2" value="No" onclick="show()" checked>
+                    <input class="form-check-input" type="radio" name="reason" id="exampleRadios2" value="No" onclick="show()" <?php if($dbInfo['reason']=="No"){ echo 'checked'; } ?>>
                     <label class="form-check-label" for="exampleRadios2">
                         No
                     </label>
@@ -127,13 +97,14 @@ use Illuminate\Http\Request;
             <div class="form-group col-sm-12">
             <label class="control-label" for="busChoice">Who will pay travel costs? *</label>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="payer" id="thirdparty" value="Third Party" onclick="hide_costs()" checked>
+                    <input class="form-check-input" type="radio" name="payer" id="thirdparty" value="Third Party" onclick="hide_costs()" <?php if($dbInfo['payer']=="Third Party"){ echo 'checked'; } ?>
+>
                     <label class="form-check-label" for="thirdparty">
                         Third Party: Responsible in whole for the employee travel cost, also known as, "No cost travel."
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="payer" id="university" value="University" onclick="show_costs()">
+                    <input class="form-check-input" type="radio" name="payer" id="university" value="University" onclick="show_costs()" <?php if($dbInfo['payer']=="University"){ echo 'checked';} ?>>
                     <label class="form-check-label" for="university">
                         University: Responsible in part or whole for the employee travel cost.
                     </label>
@@ -177,8 +148,8 @@ use Illuminate\Http\Request;
             </div></div>
         </div>
         <div class="row">
-            <button type="submit" name="submit" id="submit" class="btn btn-default blue col-sm-4" value="submit">Submit</button>
-{{--            <a class="col-sm-6 btn btn-default btn-lg blue" type="submit" name="submit" id="submit">Submit</a>--}}
+            <button type="submit" name="submit" id="submit" class="btn btn-default blue col-sm-4" value="submit">Update</button>
+{{--            <a class="col-sm-6 btn btn-default btn-lg blue" type="submit" name="submit" id="submit">Update</a>--}}
         </div>
     </form>
     {{--                See Your Trips Modal--}}
