@@ -30,6 +30,11 @@ Route::get('/upload', function() {
 });
 Auth::routes();
 
+Route::get('/mytrip', function() {
+    return view('mytrip');
+});
+Auth::routes();
+
 Route::get('/welcome', function()
 {
     return View::make('welcome');
@@ -40,3 +45,4 @@ Route::post('/authorization', 'MailController@sendMail');
 Route::get('/authorization', 'TripViewController@loadPage');
 
 Route::get('/trips', 'TripListController@loadPage');
+Route::get('/mytrip', 'MyTripController@loadPage');
