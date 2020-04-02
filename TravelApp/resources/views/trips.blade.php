@@ -34,18 +34,17 @@ use Illuminate\Http\Request;
 
     <h2>List of all submitted trips</h2>
 	
-	@if (count($triplist) <= 0)
+	@if (count($display_array) <= 0)
 		There are no submitted trips!<br>
 	@else
-		@if (count($triplist) == 1)
+		@if (count($display_array) == 1)
 			There is 1 submitted trip!<br>
 		@else
-			There are <?php echo count($triplist) ?> submitted trips!<br>
+			There are <?php echo count($display_array) ?> submitted trips!<br>
 		@endif
 		<br>
-		@foreach ($triplist as $array_cast)
-			<?php $trip = (array) $array_cast; ?>
-			From <?php echo $trip['starting_location'] ?> to <?php echo $trip['destination'] ?>: <?php echo $trip['start_date'] ?> - <?php echo $trip['end_date'] ?><br>
+		@foreach ($display_array as $trip)
+			<a href=<?php echo $trip['url'] ?>><?php echo $trip['display'] ?></a><br>
 		@endforeach
 	@endif
 	
