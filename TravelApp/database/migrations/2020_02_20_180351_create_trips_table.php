@@ -27,6 +27,9 @@ class CreateTripsTable extends Migration
             $table->boolean('payer');
             $table->string('conference');
             $table->string('business_purpose');
+
+            $table->string('file_location');
+            
             $table->timestamps();
         });
     }
