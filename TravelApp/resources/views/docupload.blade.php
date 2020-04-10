@@ -19,14 +19,17 @@ use Illuminate\Http\Form;
 </head>
 <header class="header-custom">
     <div class="logo1">
-            <a href="{{url('/')}}"></a>
-            <img id="banner" src="/images/boisestate-leftalignedmark-orange.png">
+            <a href="{{url('/')}}">
+            <img id="banner" src="/images/boisestate-leftalignedmark-orange.png"></a>
     </div>
 </header>
 <body class="">
 @guest
 
 @endguest
+<div class="bootsrap-iso container fpad">
+    <a href="{{ url('welcome') }}">Back to Welcome Page</a>
+
     <h2>Upload a File.</h2>
         <form action="{{ route('file.upload.post') }}" method="post" enctype="multipart/form-data">
             @csrf
@@ -43,5 +46,6 @@ use Illuminate\Http\Form;
     <h2>Files Uploaded for this Trip.</h2>
     <p>TODO: Restructure the database to hold file paths and display downloadable links to them here as they get added to the page with the above form. 
     See: https://laravel.com/docs/7.x/filesystem#retrieving-files</p>
+</div>
 </body>
 </html>

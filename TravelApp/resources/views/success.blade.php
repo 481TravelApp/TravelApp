@@ -13,6 +13,7 @@
 </head>
 <header class="header-custom">
     <div class="logo">
+    <!-- this redirect not to homepage -->
         <a href="http://www.boisestate.edu">
             <img id="banner" src="/images/boisestate-leftalignedmark-orange.png">
         </a>

@@ -22,8 +22,8 @@ use Illuminate\Http\Request;
 </head>
 <header class="header-custom">
     <div class="logo1">
-            <a href="{{url('/')}}"></a>
-            <img id="banner" src="/images/boisestate-leftalignedmark-orange.png">
+            <a href="{{url('/')}}">
+            <img id="banner" src="/images/boisestate-leftalignedmark-orange.png"></a>
     </div>
 </header>
 <body class="">
