@@ -28,7 +28,7 @@ use Illuminate\Http\Form;
 
 @endguest
 <div class="bootsrap-iso container fpad">
-	    <a href="{{ url('upload') }}">
+	<a href="{{ url('upload') }}">
 		<button type="button" name="back" id="back" class="btn btn-default blue" value="back">Back to Trip Selection</button>
 	</a>
 
