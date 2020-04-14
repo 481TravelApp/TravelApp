@@ -28,7 +28,9 @@ use Illuminate\Http\Form;
 
 @endguest
 <div class="bootsrap-iso container fpad">
-    <a href="{{ url('welcome') }}">Back to Welcome Page</a>
+	    <a href="{{ url('upload') }}">
+		<button type="button" name="back" id="back" class="btn btn-default blue" value="back">Back to Trip Selection</button>
+	</a>
 
     <h2>Upload a File.</h2>
         <form action="{{ route('file.upload.post') }}" method="post" enctype="multipart/form-data">

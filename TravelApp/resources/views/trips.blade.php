@@ -29,7 +29,9 @@ use Illuminate\Http\Request;
 
 @endguest
 <div class="bootsrap-iso container fpad">
-    <a href="{{ url('welcome') }}">Back to Welcome Page</a>
+    <a href="{{ url('welcome') }}">
+		<button type="button" name="back" id="back" class="btn btn-default blue" value="back">Back to Welcome Page</button>
+	</a>
 	
 
     <h2>List of all submitted trips</h2>
@@ -44,7 +46,11 @@ use Illuminate\Http\Request;
 		@endif
 		<br>
 		@foreach ($display_array as $trip)
-			<a href=<?php echo $trip['url'] ?>><?php echo $trip['display'] ?></a><br>
+			<a class="triplink" href=<?php echo $trip['url'] ?>>
+				<div class="tripbox">
+					<?php echo $trip['display'] ?>
+				</div>
+			</a>
 		@endforeach
 	@endif
 	

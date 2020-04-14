@@ -29,7 +29,9 @@ use Illuminate\Http\Request;
 
 @endguest
 <div class="bootsrap-iso container fpad">
-    <a href="{{ url('welcome') }}">Back to Welcome Page</a>
+	<a href="{{ url('welcome') }}">
+		<button type="button" name="back" id="back" class="btn btn-default blue" value="back">Back to Welcome Page</button>
+	</a>
     <h2>Travel Authorization Request Form</h2>
     <form role="form" action="" method="post">
         @csrf

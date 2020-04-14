@@ -23,9 +23,10 @@
 
     </head>
     <header class="header-custom">
-        <div class="logo1">
-                <img id="banner" src="/images/boisestate-leftalignedmark-orange.png">
-        </div>
+    <div class="logo1">
+            <a href="{{url('/')}}">
+            <img id="banner" src="/images/boisestate-leftalignedmark-orange.png"></a>
+    </div>
             @include('includes.header')
     </header>
     <body class="">

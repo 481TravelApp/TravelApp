@@ -47,6 +47,20 @@
      color: white;
  }
 
+.tripbox {
+	position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: .05em solid #000;
+	text-decoration: none;
+}
+
+.triplink {
+	text-decoration: none;
+}
+
  .navbar-img {
      width: auto;
      height: 100px;
