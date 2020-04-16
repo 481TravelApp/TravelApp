@@ -6,6 +6,113 @@
      margin: 0;
  }
 
+ /*Table stuff for the upload page*/
+
+ .uploadbtn {
+     width: 100%;
+ }
+
+ .guh {
+    display: block;
+ }
+
+ .uploadfrm {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10px;
+ }
+
+ .fileTable {
+    padding:0;
+    margin:0;
+ }
+
+ body.fileTable {
+    color: #333;
+    font: 14px Sans-Serif;
+    background: #eee;
+  }
+
+ h1.fileTable {
+    text-align: center;
+    padding: 20px 0 12px 0;
+    margin: 0;
+  }
+  
+  h2.fileTable {
+    font-size: 16px;
+    text-align: center;
+    padding: 0 0 12px 0; 
+  }
+
+ #container.fileTable {
+    box-shadow: 0 5px 10px -5px rgba(0,0,0,0.5);
+    position: relative;
+    background: white; 
+  }
+
+ table.fileTable {
+    background-color: #F3F3F3;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 15px 0;
+  }
+  
+  th.fileTable {
+    background-color: #0033a0;
+    color: #FFF;
+    cursor: pointer;
+    padding: 5px 10px;
+  }
+  
+  th small.fileTable {
+    font-size: 9px; 
+  }
+  
+  td.fileTable, th.fileTable {
+    text-align: left;
+  }
+  
+  a.fileTable{
+    text-decoration: none;
+  }
+  
+  td a.fileTable{
+    color: #663300;
+    display: block;
+    padding: 5px 10px;
+  }
+  
+  th a.fileTable{
+    padding-left: 0
+  }
+  
+  td.fileTable:first-of-type a {
+    background: url(./.images/file.png) no-repeat 10px 50%;
+    padding-left: 35px;
+  }
+  
+  th.fileTable:first-of-type {
+    padding-left: 35px;
+  }
+  
+  td.fileTable:not(:first-of-type) a {
+    background-image: none !important;
+  } 
+  
+  tr.fileTable:nth-of-type(odd) {
+    background-color: #E6E6E6;
+  }
+  
+  tr.fileTable:hover td {
+    background-color:#CACACA;
+  }
+  
+  tr.fileTable:hover td a{
+    color: #000;
+  }
+
 .full-height {
     height: 100vh;
 }

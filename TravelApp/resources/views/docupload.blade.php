@@ -23,31 +23,90 @@ use Illuminate\Http\Form;
             <img id="banner" src="/images/boisestate-leftalignedmark-orange.png"></a>
     </div>
 </header>
-<body class="">
+<body class="fileTable">
 @guest
 
 @endguest
 <div class="bootsrap-iso container fpad">
 	<a href="{{ url('upload') }}">
-		<button type="button" name="back" id="back" class="btn btn-default blue" value="back">Back to Trip Selection</button>
-	</a>
+		<button type="button" name="back" id="back" class="btn btn-default blue guh" value="back">Back to Trip Selection</button>
+	</a></br>
 
-    <h2>Upload a File.</h2>
-        <form action="{{ route('file.upload.post') }}" method="post" enctype="multipart/form-data">
-            @csrf
-            <div class="col-md-6">
-                <input type="file" name="file" class="form-control">
-            </div>
    
-            <div class="col-md-6">
-                <button type="submit" class="btn btn-success">Upload</button>
-            </div>
 
-            <input type="hidden" id="tripNum" name="tripNum" value="{{ $tripNum }}">
-        </form>
-    <h2>Files Uploaded for this Trip.</h2>
-    <p>TODO: Restructure the database to hold file paths and display downloadable links to them here as they get added to the page with the above form. 
-    See: https://laravel.com/docs/7.x/filesystem#retrieving-files</p>
+    @if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+    @endif
+    @if (session('fail'))
+    <div class="alert alert-fail">
+        {{ session('fail') }}
+    </div>
+    @endif
+    
+    
+    <div class='fileTable' id='container'>
+    
+    <h1 class='fileTable'>Files Uploaded for your Trip from {{ $dbInfo['starting_location']}} to {{ $dbInfo['destination'] }}</h1>
+
+    <table class='fileTable'>
+        <thead class='fileTable'>
+            <tr class='fileTable'>
+                <th class='fileTable'>File Name</th>
+                <th class='fileTable'>File Type</th>
+                <th class='fileTable'>Size <small class='fileTable'>(bytes)</small></th>
+                <th class='fileTable'>Date Added</th>
+                <th class='fileTable'>Delete File</th>
+            </tr>
+        </thead>
+        <tbody class='fileTable'>
+        @foreach ($fileInfo as $file_object)
+        <tr class='fileTable'>
+            <td class='fileTable'>
+                <a href="download/{{ $file_object['id'] }}">{{ $file_object['original_name'] }}</a>
+            </td>
+            <td class='fileTable'><a class='fileTable'>{{ $file_object['extension'] }}</a></td>
+            <td class='fileTable'><a class='fileTable'>{{ Storage::size($file_object['file_name']) }}</a></td>
+            <td class='fileTable'><a class='fileTable'>{{ $file_object['created_at'] }}</a></td>
+            <td class='fileTable'>
+                <a href="delete/{{ $file_object['id'] }}" class='fileTable'>Delete File</a>
+            </td>
+        </tr>
+        @endforeach
+        <tr class='fileTable'>
+            
+        </tr>
+        
+        </tbody>
+    </table>
+
+
+    </div>
+    <div class='fileTable' id='container'>
+
+    <table class='fileTable'>
+        <thead class='fileTable'>
+            <tr class='fileTable'>
+                <th class='fileTable'>Upload a File.</th>
+            </tr>
+        </thead>
+        <tbody class='fileTable'>
+            <tr class='fileTable'>
+                <td class='fileTable'>
+                    <form action="{{ route('file.upload.post') }}" method="post" enctype="multipart/form-data">
+                        @csrf
+                        <input type="file" name="file" class="form-control uploadfrm">
+
+                        <button type="submit" class="btn btn-success uploadbtn">Upload</button>
+
+                        <input type="hidden" id="tripNum" name="tripNum" value="{{ $tripNum }}">
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 </div>
 </body>
 </html>
