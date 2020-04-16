@@ -27,55 +27,33 @@ class openidredirect extends Controller
         return view('home');
     }
 
-	public function openid()
-	{
-		$provider = config('openid.provider');
-		$clientid = config('openid.clientid');
-		$secret = config('openid.secret');
+        public function openid()
+        {
+                //$provider = config('openid.provider');
+                //$clientid = config('openid.clientid');
+                //$secret = config('openid.secret');
 
-		$oidc = new OpenIDConnectClient($provider, $clientid, $secret);
+                $provider = 'https://weblogin.boisestate.edu/adfs/services/trust';
+                $clientid = 'd22e09fe-e1db-4cb8-bd48-71cb9db01ce4';
+                $secret = '84nar0E0a3mhrp94w8uXidWoOd0XvtyvgflLDqcN';
 
-		// $oidc->setResponseTypes(['id_token']);
-		$oidc->addScope(['openid', 'profile']);
-		//$oidc->setResponseTypes(array('id_token'));
-		$oidc->setAllowImplicitFlow(true);
-		// $oidc->addAuthParam(['response_mode' => 'form_post']);
-		// $oidc->addScope('openid');
-		// $oidc->addScope('given_name');
-		// $oidc->addScope('firstName');
-		   $oidc->addScope('roles');
-		// $oidc->setAllowImplicitFlow(true);
-		// $oidc->addAuthParam(['response_mode' => 'form_post']);
+                $oidc = new OpenIDConnectClient($provider, $clientid, $secret);
 
-		// Successfully redirects user to Boise State login page but an
-		// error is returned by that page
-		$oidc->authenticate();
+                $oidc->setAllowImplicitFlow(true);
+                $oidc->addScope('roles');
+                $oidc->authenticate();
 
-		// Testing stuff
-		$asdf = $oidc->getVerifiedClaims();
-		$abc = $oidc->getAccessTokenPayload();
-		$access = $oidc->getAccessToken();
-		$idTok = $oidc->getIdToken();
-		echo '<pre>';
-		var_dump($access);
-		var_dump($idTok);
-		echo 'Decoded access_token:';
-		echo '<br/>';
-		var_dump($abc);	
+                // Testing stuff
+                $asdf = $oidc->getVerifiedClaims();
+                return view('home');
+                // die();
+                // Need to somehow verify the data sent to this page and then
+                // authenticate the user with Auth facade.
+                //
+                // See https://laravel.com/docs/5.8/authentication#other-authentication-methods
+        }
 
-		echo 'Decoded id_token:';
-		echo '<br/>';
-		var_dump($asdf);
-		echo '</pre>';
-
-		// die();
-		// Need to somehow verify the data sent to this page and then
-		// authenticate the user with Auth facade.
-		//
-		// See https://laravel.com/docs/5.8/authentication#other-authentication-methods
-	}
-
-	public function openidredirect()
-	{
-	}
+        public function openidredirect()
+        {
+        }
 }
