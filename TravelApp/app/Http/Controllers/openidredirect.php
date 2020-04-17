@@ -29,27 +29,28 @@ class openidredirect extends Controller
 
         public function openid()
         {
-                //$provider = config('openid.provider');
-                //$clientid = config('openid.clientid');
-                //$secret = config('openid.secret');
-
-                $provider = 'none';
-                $clientid = 'none';
-                $secret = 'none';
+                $provider = config('openid.provider');
+                $clientid = config('openid.clientid');
+                $secret = config('openid.secret');
 
                 $oidc = new OpenIDConnectClient($provider, $clientid, $secret);
 
                 $oidc->setAllowImplicitFlow(true);
                 $oidc->addScope('roles');
                 $oidc->authenticate();
-
-                // Testing stuff
                 $asdf = $oidc->getVerifiedClaims();
-                return view('home');
+                $abcd = $oidc->getAccessToken();
+                $username = $oidc[0];
+              //  $data = DB::table('users')
+               //                 ->
+                
+                ?>
+                <pre>
+                    <?php echo var_dump($oidc); echo var_dump($abcd);?>
+                </pre>
+                <?php
+                //return view('home');
                 // die();
-                // Need to somehow verify the data sent to this page and then
-                // authenticate the user with Auth facade.
-                //
                 // See https://laravel.com/docs/5.8/authentication#other-authentication-methods
         }
 
