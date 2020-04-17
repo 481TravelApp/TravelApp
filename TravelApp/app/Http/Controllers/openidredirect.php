@@ -40,13 +40,13 @@ class openidredirect extends Controller
                 $oidc->authenticate();
                 $asdf = $oidc->getVerifiedClaims();
                 $abcd = $oidc->getAccessToken();
-                $username = $asdf[0];
+                
               //  $data = DB::table('users')
                //                 ->
                 
                 ?>
                 <pre>
-                    <?php echo var_dump($oidc); echo var_dump($abcd);?>
+                    <?php echo var_dump($oidc); echo var_dump($abcd); echo $asdf[0];?>
                 </pre>
                 <?php
                 //return view('home');
