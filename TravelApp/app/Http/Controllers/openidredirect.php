@@ -40,7 +40,7 @@ class openidredirect extends Controller
                 $oidc->authenticate();
                 $asdf = $oidc->getVerifiedClaims();
                 $abcd = $oidc->getAccessToken();
-                $username = $oidc[0];
+                $username = $asdf[0];
               //  $data = DB::table('users')
                //                 ->
                 
