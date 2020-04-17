@@ -37,16 +37,17 @@ class openidredirect extends Controller
 
                 $oidc->setAllowImplicitFlow(true);
                 $oidc->addScope('roles');
+                $oidc->addAdditionalJwk('roles');
                 $oidc->authenticate();
                 $asdf = $oidc->getVerifiedClaims();
-                $abcd = $oidc->getAccessToken();
+                $abcd = $oidc->getAccessTokenPayload();
                 
               //  $data = DB::table('users')
                //                 ->
                 
                 ?>
                 <pre>
-                    <?php echo var_dump($oidc); echo var_dump($abcd); echo $asdf[0];?>
+                    <?php echo var_dump($asdf); echo var_dump($abcd);?>
                 </pre>
                 <?php
                 //return view('home');
