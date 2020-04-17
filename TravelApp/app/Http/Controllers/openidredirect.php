@@ -33,9 +33,9 @@ class openidredirect extends Controller
                 //$clientid = config('openid.clientid');
                 //$secret = config('openid.secret');
 
-                $provider = 'https://weblogin.boisestate.edu/adfs/services/trust';
-                $clientid = 'd22e09fe-e1db-4cb8-bd48-71cb9db01ce4';
-                $secret = '84nar0E0a3mhrp94w8uXidWoOd0XvtyvgflLDqcN';
+                $provider = 'none';
+                $clientid = 'none';
+                $secret = 'none';
 
                 $oidc = new OpenIDConnectClient($provider, $clientid, $secret);
 
