@@ -37,7 +37,7 @@ class openidredirect extends Controller
 
                 $oidc->setAllowImplicitFlow(true);
                 $oidc->addScope('roles');
-                $oidc->addAdditionalJwk('roles');
+                $oidc->addAuthParam('roles');
                 $oidc->authenticate();
                 $asdf = $oidc->getVerifiedClaims();
                 $abcd = $oidc->getAccessTokenPayload();
