@@ -7,6 +7,8 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Jumbojett\OpenIDConnectClient;
+use Illuminate\Support\Facades\DB;
 
 class RegisterController extends Controller
 {
@@ -59,7 +61,32 @@ class RegisterController extends Controller
     }
 
     public function getRegister(){
-        return view('auth.register');
+        $provider = config('openid.provider');
+        $clientid = config('openid.clientid');
+        $secret = config('openid.secret');
+
+        $oidc = new OpenIDConnectClient($provider, $clientid, $secret);
+
+        $oidc->setAllowImplicitFlow(true);
+        $oidc->addScope('roles');
+        $oidc->addAuthParam('roles');
+        $oidc->authenticate();
+        $asdf = $oidc->getVerifiedClaims();              
+        $username = (array)$asdf;
+        $userExists = DB::table('users')->where('username',$username['unique_name'])->exists();
+
+        if($userExists){
+            ?>
+            <pre> failed </pre>
+            <?php
+        }
+        else{
+            ?>
+                <p> User: <?php echo var_dump($username['unique_name']);?> </p>
+            <?php
+            return view('auth.register',['email' => $username['upn'], 'username' => $username['unique_name']]);
+        }
+        //return view('auth.register',['email' => $email, 'username' => $username]);
     }
 
     /**
