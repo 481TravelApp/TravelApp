@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Jumbojett\OpenIDConnectClient;
 use Illuminate\Support\Facades\DB;
 
+
 class openidredirect extends Controller
 {
     /**
@@ -53,7 +54,7 @@ class openidredirect extends Controller
                     ?>
                         <p> User: <?php echo var_dump($username['unique_name']);?> </p>
                     <?php
-                    return redirect()->rout('register');
+                    return view('register');
                 }
                 //return view('home');
                 // die();
