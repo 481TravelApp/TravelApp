@@ -82,7 +82,7 @@ class RegisterController extends Controller
         }
         else{
             ?>
-                <p> User: <?php echo var_dump($username['unique_name']);?> </p>
+                <p> User22: <?php echo var_dump($username['unique_name']);?> </p>
             <?php
             return view('register',['email' => $username['upn'], 'username' => $username['unique_name']]);
         }
