@@ -54,12 +54,6 @@ class openidredirect extends Controller
                         <pre> User: <?php echo $username;?> </pre>
                     <?php
                 }
-                           
-                ?>
-                <pre>
-                    <?php echo var_dump($asdf); echo var_dump($abcd);?>
-                </pre>
-                <?php
                 //return view('home');
                 // die();
                 // See https://laravel.com/docs/5.8/authentication#other-authentication-methods
