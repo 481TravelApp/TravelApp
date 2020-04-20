@@ -44,7 +44,6 @@ class openidredirect extends Controller
                 $asdf = $oidc->getVerifiedClaims();              
                 $username = (array)$asdf;
                 $userExists = DB::table('users')->where('username',$username['unique_name'])->exists();
-                $request->session()->put('username',$username['unique_name']);
 
                 if($userExists){
                     ?>
@@ -55,7 +54,7 @@ class openidredirect extends Controller
                     ?>
                         <p> User: <?php echo var_dump($username['unique_name']);?> </p>
                     <?php
-                    return redirect('/register');
+                    return redirect()->route('/register',['email' => $username['upn'], 'username' => $username['unique_name']]);
                 }
                 //return view('home');
                 // die();
