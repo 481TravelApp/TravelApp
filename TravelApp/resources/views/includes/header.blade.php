@@ -6,7 +6,7 @@
             @auth
             <a href="{{ url('/home') }}">Home</a>
         @else
-            <a href="{{ route('register') }}">Login</a>
+            <a href="{{ route('oidlogin') }}">Login</a>
         @endauth
             </div>
 
