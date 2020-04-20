@@ -51,7 +51,7 @@ class openidredirect extends Controller
                 }
                 else{
                     ?>
-                        <pre> User: <?php echo $username;?> </pre>
+                        <p> User: <?php echo $username;?> </p>
                     <?php
                 }
                 //return view('home');
