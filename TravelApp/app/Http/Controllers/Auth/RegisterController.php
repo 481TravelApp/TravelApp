@@ -84,7 +84,7 @@ class RegisterController extends Controller
             ?>
                 <p> User: <?php echo var_dump($username['unique_name']);?> </p>
             <?php
-            return view('auth.register',['email' => $username['upn'], 'username' => $username['unique_name']]);
+            return view('register',['email' => $username['upn'], 'username' => $username['unique_name']]);
         }
         //return view('auth.register',['email' => $email, 'username' => $username]);
     }
