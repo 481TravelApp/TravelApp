@@ -61,31 +61,7 @@ class RegisterController extends Controller
     }
 
     public function getRegister(){
-        $provider = config('openid.provider');
-        $clientid = config('openid.clientid');
-        $secret = config('openid.secret');
-
-        $oidc = new OpenIDConnectClient($provider, $clientid, $secret);
-
-        $oidc->setAllowImplicitFlow(true);
-        $oidc->addScope('roles');
-        $oidc->addAuthParam('roles');
-        $oidc->authenticate();
-        $asdf = $oidc->getVerifiedClaims();              
-        $username = (array)$asdf;
-        $userExists = DB::table('users')->where('username',$username['unique_name'])->exists();
-
-        if($userExists){
-            ?>
-            <pre> failed </pre>
-            <?php
-        }
-        else{
-            ?>
-                <p> User22: <?php echo var_dump($username['unique_name']);?> </p>
-            <?php
-            return view('register',['email' => $username['upn'], 'username' => $username['unique_name']]);
-        }
+            return view('auth.register');
         //return view('auth.register',['email' => $email, 'username' => $username]);
     }
 
