@@ -41,7 +41,7 @@ class openidredirect extends Controller
                 $oidc->addAuthParam('roles');
                 $oidc->authenticate();
                 $asdf = $oidc->getVerifiedClaims();              
-                $username = var_dump($asdf->{'unique_name'});
+                $username = (array) $asdf['unique_name'];
                 $userExists = DB::table('users')->where('username',$username)->exists();
 
                 if($userExists){
