@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Jumbojett\OpenIDConnectClient;
+use Illuminate\Support\Facades\DB;
 
 class openidredirect extends Controller
 {
