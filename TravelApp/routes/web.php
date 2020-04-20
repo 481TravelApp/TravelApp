@@ -18,22 +18,18 @@ Route::get('/', function () {
 Route::get('/success', function() {
     return view('success');
 });
-Auth::routes();
 
 Route::get('/trips', function() {
     return view('trips');
 });
-Auth::routes();
 
 Route::get('/upload', function() {
     return view('upload');
 });
-Auth::routes();
 
 Route::get('/mytrip', function() {
     return view('mytrip');
 });
-Auth::routes();
 
 Route::get('/welcome', function()
 {
@@ -55,4 +51,20 @@ Route::get('/download/{id}', 'DocumentUploadController@downloadFile')->name('fil
 Route::get('/delete/{id}', 'DocumentUploadController@deleteFile')->name('file.delete.delete');
 
 Route::get('/openidredirect', 'openidredirect@openid');
-Route::post('/openidredirect', 'openidredirect@openidredirect');
+Route::post('/openidredirect', 'openidredirect@');
+
+// Authentication Routes...
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+// Registration Routes...
+Route::get('register', 'Auth\RegisterController@getRegister')->name('register');
+Route::post('register', 'Auth\RegisterController@register');
+
+// Password Reset Routes...
+Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+
