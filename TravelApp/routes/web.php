@@ -50,7 +50,7 @@ Route::post('/docupload', 'DocumentUploadController@uploadFile')->name('file.upl
 Route::get('/download/{id}', 'DocumentUploadController@downloadFile')->name('file.download.get');
 Route::get('/delete/{id}', 'DocumentUploadController@deleteFile')->name('file.delete.delete');
 
-Route::get('/openidredirect', 'Auth\RegisterController@getRegister')->name('oidlogin');
+Route::get('/openidredirect', 'openidredirect@openid')->name('oidlogin');
 //Route::get('/openidredirect', 'openidredirect@openid')->name('oidlogin');
 
 // Authentication Routes...
