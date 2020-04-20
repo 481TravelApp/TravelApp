@@ -46,9 +46,7 @@ class openidredirect extends Controller
                 $userExists = DB::table('users')->where('username',$username['unique_name'])->exists();
 
                 if($userExists){
-                    ?>
-                    <pre> failed </pre>
-                    <?php
+                   return view('auth.login');
                 }
                 else{
                     ?>
