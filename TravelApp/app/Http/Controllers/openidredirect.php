@@ -54,7 +54,7 @@ class openidredirect extends Controller
                     ?>
                         <p> User: <?php echo var_dump($username['unique_name']);?> </p>
                     <?php
-                    return redirect()->route('auth/register',['email' => $username['upn'], 'username' => $username['unique_name']]);
+                    return redirect()->route('auth.register',['email' => $username['upn'], 'username' => $username['unique_name']]);
                 }
                 //return view('home');
                 // die();
