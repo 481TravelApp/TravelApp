@@ -54,7 +54,7 @@ Route::get('/openidredirect', 'openidredirect@openid')->name('oidlogin');
 //Route::get('/openidredirect', 'openidredirect@openid')->name('oidlogin');
 
 // Authentication Routes...
-Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::get('login', 'Auth\LoginController@login')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
