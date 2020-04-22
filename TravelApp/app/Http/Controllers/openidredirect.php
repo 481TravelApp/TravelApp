@@ -48,6 +48,7 @@ class openidredirect extends Controller
                 if($userExists){
                     $user = User::whereUsername([strtolower($username['unique_name'])])->first();
                     Auth::login($user);
+                    return redirect('/home');
                 }
                 else{
                     ?>
