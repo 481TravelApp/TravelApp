@@ -43,16 +43,18 @@ class openidredirect extends Controller
                 $oidc->authenticate();
                 $asdf = $oidc->getVerifiedClaims();              
                 $username = (array)$asdf;
-                $userExists = DB::table('users')->where('username',$username['unique_name'])->exists();
+                $userExists = DB::table('users')->where('username',strtolower($username['unique_name']))->exists();
 
                 if($userExists){
-                   return view('auth.login');
+                    if(Auth::attempt(['username' => strtolower($username['unique_name'])])){
+                    return redirect('/home');
+                    }
                 }
                 else{
                     ?>
                         <p> User: <?php echo var_dump($username['unique_name']);?> </p>
                     <?php
-                    return view('auth.register',['email' => $username['upn'], 'username' => $username['unique_name']]);
+                    return view('auth.register',['email' => $username['upn'], 'username' => strtolower($username['unique_name'])]);
                 }
                 //return view('home');
                 // die();
