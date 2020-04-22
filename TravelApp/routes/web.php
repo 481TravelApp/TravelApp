@@ -62,4 +62,3 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('register', 'Auth\RegisterController@getRegister')->name('register');
 Route::post('register', 'Auth\RegisterController@register');
 
-

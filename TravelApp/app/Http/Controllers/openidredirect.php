@@ -6,6 +6,8 @@ use Illuminate\Foundation\Auth\User;
 use Jumbojett\OpenIDConnectClient;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Application;
+use App;
 
 class openidredirect extends Controller
 {
@@ -31,6 +33,20 @@ class openidredirect extends Controller
 
         public function openid()
         {
+            if(App::environment('local')){
+                $testExists = DB::table('users')->where('username', 'testuser')->exists();
+                $userInfo = ['last_name'=>'user', 'first_name'=>'test', 'email' => 'testuser@nonexistant.com', 'username' => 'testuser', 'department' => 'testing department', 'BSU_id' => '0'];
+                if($testExists){
+                    $testUser = User::whereUsername('testuser')->first();
+                    Auth::login($testUser);
+                    return redirect('/home');
+                }
+                 else{
+                    return view('auth.register',['email' => 'testuser@nonexistant.com', 'username' => 'testuser']);
+                 }
+            }
+            
+            else{
                 $provider = config('openid.provider');
                 $clientid = config('openid.clientid');
                 $secret = config('openid.secret');
@@ -51,11 +67,10 @@ class openidredirect extends Controller
                     return redirect('/home');
                 }
                 else{
-                    ?>
-                        <p> User: <?php echo var_dump($username['unique_name']);?> </p>
-                    <?php
                     return view('auth.register',['email' => $username['upn'], 'username' => strtolower($username['unique_name'])]);
                 }
+
+             }
                 //return view('home');
                 // die();
                 // See https://laravel.com/docs/5.8/authentication#other-authentication-methods
