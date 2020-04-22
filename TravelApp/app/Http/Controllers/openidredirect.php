@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\User;
 use Jumbojett\OpenIDConnectClient;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -46,9 +46,8 @@ class openidredirect extends Controller
                 $userExists = DB::table('users')->where('username',strtolower($username['unique_name']))->exists();
 
                 if($userExists){
-                    if(Auth::attempt(['username' => strtolower($username['unique_name'])])){
-                    return redirect('/home');
-                    }
+                    $user = User::whereUsername([strtolower($username['unique_name'])])->first();
+                    Auth::login($user);
                 }
                 else{
                     ?>
