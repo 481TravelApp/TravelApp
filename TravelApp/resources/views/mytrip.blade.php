@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 
 ?>
 
-
+<!-- This is the editing of trips page. -->
 
 <!DOCTYPE html>
 <html lang="en">

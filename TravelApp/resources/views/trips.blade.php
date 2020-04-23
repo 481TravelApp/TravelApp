@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 ?>
-
+<!-- this is the page that prints the trip list out for editing. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>

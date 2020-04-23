@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- this is the trip success confirmation page. -->
 <head>
     <title>Authorization Page</title>
     <meta charset="utf-8">

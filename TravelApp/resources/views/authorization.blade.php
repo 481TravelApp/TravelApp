@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 ?>
-
+<!-- This is the trip submission page. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>

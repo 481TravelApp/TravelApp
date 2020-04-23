@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+// this file is not used, but if you need a seeder for something in the future, this is here
 class DatabaseSeeder extends Seeder
 {
     /**
