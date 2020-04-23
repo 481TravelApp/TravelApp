@@ -34,6 +34,11 @@ class DocumentUploadController extends Controller
             return view('docupload', ['dbInfo' => $stupid, 'tripNum' => $id, 'fileInfo' => $fileInfo]);
     }
 
+    /**
+     * Functionality for downloading a file to the user's browser.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
     public function downloadFile($id)
     {
         $id = (int) $id;
@@ -61,6 +66,11 @@ class DocumentUploadController extends Controller
         return Storage::download($filename, $ogname);
     }
 
+    /**
+     * Functionality to delete a file from the server and database.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
     public function deleteFile($id)
     {
         
@@ -87,15 +97,20 @@ class DocumentUploadController extends Controller
         return back()->with('success', "The file has been deleted.");
     }
 
+    /**
+     * Functionality to create a new file on the server and database.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
     public function uploadFile(Request $request)
     {
         //Validate the file.
         $request->validate([
-            'file' => 'required|mimes:pdf,xlx,csv|max:2048',
+            'file' => 'required|mimes:pdf,png,jpg,jpeg,gif,xlx,csv|max:4096',
         ]);
 
         //If the file exists...
-        if ($request->hasFile('file')) {
+        if ($thingy) {
 
             //Get a reference to the file.
             $file = $request->file('file');
@@ -114,8 +129,6 @@ class DocumentUploadController extends Controller
 
             //Get the extension type
             $extension = $file->extension();
-
-            Log::debug($og_name);
 
             //Get the current time.
             $creationDate = now(); // Hacky solution.
@@ -142,7 +155,7 @@ class DocumentUploadController extends Controller
             }
 
           } else {
-              return back()->with('fail', 'Please Include a File to Upload.');
+              return back()->with('fail', 'The Chosen File is not of an Appropriate File Type. Acceptable file types are JPEG/JPG, PNG, GIF, PDF, or CSV');
           }
     }
 }

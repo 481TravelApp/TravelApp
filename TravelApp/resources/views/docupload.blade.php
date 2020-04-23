@@ -39,9 +39,11 @@ use Illuminate\Http\Form;
         {{ session('success') }}
     </div>
     @endif
-    @if (session('fail'))
-    <div class="alert alert-fail">
-        {{ session('fail') }}
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
     </div>
     @endif
     
