@@ -52,6 +52,7 @@ class MailController extends Controller
         $subject = "Travel Authorization Request";
         $message = "";
        // $cc = "CC: CMGT@boisestate.edu";
+       $cc = 'oscaravila@boisestate.edu'
         $headers = "From: CMGT@boisestate.edu" . "\r\n" .
             $cc . "\r\n" .
             'X-Mailer: PHP/' . phpversion();
