@@ -76,8 +76,17 @@ add it to the `APP_KEY` variable like so:
 
     APP_KEY=randomstringthats32characterlong
 
+### 7. Enable authentication bypass
+Authentication through OpenID only works on the live server. In order to support
+local development OpenID can be bypassed and the site forced to authenticate a
+specific hardcoded user by setting the following environment variable:
 
-### 7. Run the server
+    APP_ENV=local
+
+This will force you to authenticate with a user that has the username "testuser"
+and email "testuser@nonexistant.com" without actually interfacing with OpenID.
+
+### 8. Run the server
 Run
 
     php artisan serve
