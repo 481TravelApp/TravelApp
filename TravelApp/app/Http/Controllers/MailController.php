@@ -47,10 +47,11 @@ class MailController extends Controller
         if($successBool) {
 
         //Creation of the email information.
-        $to = $request->input('email');
+        //$to = $request->input('email');
+        $to = 'oscaravila@u.boisestate.edu';
         $subject = "Travel Authorization Request";
         $message = "";
-        $cc = "CC: CMGT@boisestate.edu";
+       // $cc = "CC: CMGT@boisestate.edu";
         $headers = "From: CMGT@boisestate.edu" . "\r\n" .
             $cc . "\r\n" .
             'X-Mailer: PHP/' . phpversion();
@@ -92,7 +93,7 @@ class MailController extends Controller
 
         $subject .= " [".$first_name." ".$last_name."]";
 
-        //error_log(mail($to, $subject, $message, $headers));
+        error_log(mail($to, $subject, $message, $headers));
 
         return view('success');
         } else {
