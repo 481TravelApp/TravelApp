@@ -48,9 +48,10 @@ class MailController extends Controller
 
         //Creation of the email information.
         $to = $request->input('email');
-        $to = 'oscaravila@u.boisestate.edu';
         $subject = "Travel Authorization Request";
         $message = "";
+		// TODO: Don't always send CCs to this email once the program is more sophisticated
+		//		 it should send to the administration of the user's department
         $cc = "CC: CMGT@boisestate.edu";
         $headers = "From: CMGT@boisestate.edu" . "\r\n" .
             $cc . "\r\n" .
@@ -93,7 +94,10 @@ class MailController extends Controller
 
         $subject .= " [".$first_name." ".$last_name."]";
 
-        error_log(mail($to, $subject, $message, $headers));
+		// Uncommenting this line will allow emails to actually be sent
+		// It is left commented out for testing so as not to spam emails
+		// TODO: Enable/disable this behavior based on an environmental variable
+        //error_log(mail($to, $subject, $message, $headers));
 
         return view('success');
         } else {
