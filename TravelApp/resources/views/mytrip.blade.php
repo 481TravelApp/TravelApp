@@ -69,6 +69,9 @@ use Illuminate\Http\Request;
                 <textarea type="email" class="form-control" name="purpose" id="purpose" rows="3" required>{{$dbInfo['business_purpose']}}</textarea>
             </div></div>
         <hr>
+		
+		<!-- TODO: When personal travel is set to "yes" by default when the page loads the buisiness date fields aren't shown. Fix is so they are -->
+		
         <div class="row">
             <div class="form-group col-sm-12">
             <label class="control-label" for="personalBusiness">Is personal travel scheduled in conjunction with business travel? *</label>
@@ -95,6 +98,9 @@ use Illuminate\Http\Request;
                 <label class="control-label" for="busEndDate">Business End Date</label>
                 <input class="form-control" id="busEndDate" name="busEndDate" placeholder="MM/DD/YYY" type="text"/>
             </div></div>
+			
+		<!-- TODO: When the university is selected as the payer by default when the page loads the cost fields aren't shown. Fix is so they are -->
+					
         <div class="row">
             <div class="form-group col-sm-12">
             <label class="control-label" for="busChoice">Who will pay travel costs? *</label>

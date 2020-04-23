@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 
 ?>
 <!-- this is the page that prints the trip list out for editing. -->
+<!-- TODO: This page and upload.blade.php are almost identical. Maybe code could be deduplicated between them? -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +34,6 @@ use Illuminate\Http\Request;
 		<button type="button" name="back" id="back" class="btn btn-default blue" value="back">Back to Welcome Page</button>
 	</a>
 	
-
     <h2>List of all submitted trips</h2>
 	
 	@if (count($display_array) <= 0)

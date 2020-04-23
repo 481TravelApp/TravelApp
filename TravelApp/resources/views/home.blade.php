@@ -1,5 +1,5 @@
 @extends('layouts.app')
-<!-- This is t he login success alert page. -->
+<!-- This is the login success alert page. -->
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

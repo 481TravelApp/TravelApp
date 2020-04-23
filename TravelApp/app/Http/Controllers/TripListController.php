@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\View;
 
-
+// TODO: This controller and UploadListController are almost identical.
+//		 Functionally, the only difference is the url that each returns
+//		 This should be refactored so that one of the files is eliminated and the url is customizable
 class TripListController extends Controller
 {
     /**

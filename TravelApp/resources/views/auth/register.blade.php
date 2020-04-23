@@ -1,11 +1,15 @@
 @extends('layouts.app')
 
+<!-- TODO: create another page where this information can be changed -->
+<!-- TODO: this page should probably be the place where user preferences (for the preferences table) are asked for initially -->
+<!-- TODO: theoretically some of this informations (name at least) should be provided by openid, but more collaboration with OIT would need to happen to figure out how to get it -->
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
+	It looks like you haven't logged in before. Please take a moment to fill out this information for your account.<br><br>
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header">{{ __('First Time Log In Registration') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">

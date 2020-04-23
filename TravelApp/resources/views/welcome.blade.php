@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <!-- this is the main page. -->
+<!-- TODO: Remove the link to "Home" in the upper right corner when the user is logged in and replace it with a logout button. All other pages that can be seen when logged in should also probably have that logout button. -->
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">

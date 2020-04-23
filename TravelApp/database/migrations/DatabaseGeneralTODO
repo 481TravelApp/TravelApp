@@ -1,0 +1,8 @@
+Presently there exists no real "migration" features for moving data from an older database to a newer version.
+All data is wiped out each time the migration is performed.
+This is fine for development and testing, but once users start actually registering accounts
+we need to be able to make changes to the database without losing those accounts.
+
+A table listing all the departments should be created and used with drop down lists
+everywhere that currently uses text input for collecting the department information.
+Additionally, each department should have associated admin accounts tied to them for approving trips.

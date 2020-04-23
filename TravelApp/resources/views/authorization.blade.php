@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 
 ?>
 <!-- This is the trip submission page. -->
+<!-- TODO: This should really be renamed to "submission.blade.php" or something similar -->
 <!DOCTYPE html>
 <html lang="en">
 <head>

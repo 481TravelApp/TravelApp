@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 ?>
-
+<!-- this is the page that prints the trip list out for document uploading. -->
+<!-- TODO: This page and trips.blade.php are almost identical. Maybe code could be deduplicated between them? -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
