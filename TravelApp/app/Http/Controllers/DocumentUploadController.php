@@ -110,7 +110,7 @@ class DocumentUploadController extends Controller
         ]);
 
         //If the file exists...
-        if ($thingy) {
+        if ($request->hasFile('file')) {
 
             //Get a reference to the file.
             $file = $request->file('file');
