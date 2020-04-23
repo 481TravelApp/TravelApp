@@ -43,7 +43,7 @@
                 @endauth
                 @guest
                     <div class="row">
-                        <a href="{{ url('/login') }}" class="col btn btn-primary btn-lg blue" type="button" id="newRequest">Submit a new travel request</a>
+                        <a href="{{ url('/openidredirect') }}" class="col btn btn-primary btn-lg blue" type="button" id="newRequest">Submit a new travel request</a>
                     </div>
                 @endguest
 				
@@ -54,7 +54,7 @@
                 @endauth
                 @guest
                     <div class="row">
-                        <a href="{{ url('/login') }}" class="col btn btn-primary btn-lg blue" type="button" id="seeTrips">See or Edit your trips</a>
+                        <a href="{{ url('/openidredirect') }}" class="col btn btn-primary btn-lg blue" type="button" id="seeTrips">See or Edit your trips</a>
                     </div>
                 @endguest
 				
@@ -65,7 +65,7 @@
                 @endauth
                 @guest
                     <div class="row">
-                        <a href="{{ url('/login') }}" class="col btn btn-primary btn-lg blue" type="button" id="enterInfo">Enter info while traveling</a>
+                        <a href="{{ url('/openidredirect') }}" class="col btn btn-primary btn-lg blue" type="button" id="enterInfo">Enter info while traveling</a>
                     </div>
                 @endguest
             </div>
