@@ -30,9 +30,14 @@ class openidredirect extends Controller
     {
         return view('home');
     }
-
+        /**
+         * This method uses OpenID to authenticate users via Boise State's authentication server. The openID uses jumbojett's library.
+         * 
+         * @return redirect or View
+         */
         public function openid()
         {
+            //This is for local development. If enviroment is set to local it will log in with this test account.
             if(App::environment('local')){
                 $testExists = DB::table('users')->where('username', 'testuser')->exists();
                 $userInfo = ['last_name'=>'user', 'first_name'=>'test', 'email' => 'testuser@nonexistant.com', 'username' => 'testuser', 'department' => 'testing department', 'BSU_id' => '0'];
@@ -46,16 +51,13 @@ class openidredirect extends Controller
                  }
             }
             
+            //unique_name and upn are the array names given to username and email when sent back from Boise State's servers.
             else{
                 $provider = config('openid.provider');
                 $clientid = config('openid.clientid');
                 $secret = config('openid.secret');
-
                 $oidc = new OpenIDConnectClient($provider, $clientid, $secret);
-
                 $oidc->setAllowImplicitFlow(true);
-                $oidc->addScope('roles');
-                $oidc->addAuthParam('roles');
                 $oidc->authenticate();
                 $asdf = $oidc->getVerifiedClaims();              
                 $username = (array)$asdf;
@@ -71,12 +73,5 @@ class openidredirect extends Controller
                 }
 
              }
-                //return view('home');
-                // die();
-                // See https://laravel.com/docs/5.8/authentication#other-authentication-methods
-        }
-
-        public function openidredirect()
-        {
         }
 }
