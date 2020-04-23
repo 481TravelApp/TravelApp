@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\View;
 
 
-class TripViewController extends Controller
+class GetUserInfoController extends Controller
 {
     /**
      * Show the application dashboard.
@@ -23,8 +23,11 @@ class TripViewController extends Controller
             $user = $request->user();
             $id = $user->id;
             $dbInfo = DB::select('select * from users where id = ?', [$id]);
-            $stupid = (array) $dbInfo[0];
+			
+			// The previous selection returns an array of arrays, but only has 1 entry
+			// This just pulls that out and casts it as an array
+            $singleArray = (array) $dbInfo[0];
 
-            return view('authorization', ['dbInfo' => $stupid]);
+            return view('authorization', ['dbInfo' => $singleArray]);
     }
 }

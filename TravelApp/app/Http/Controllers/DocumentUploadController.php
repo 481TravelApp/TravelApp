@@ -13,7 +13,7 @@ use App\Http\Controllers\View;
 class DocumentUploadController extends Controller
 {
     /**
-     * Show the application dashboard.
+     * Shows the base page for uploading files and viewing uploads
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */

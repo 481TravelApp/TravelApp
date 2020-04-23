@@ -11,7 +11,7 @@ use App\Http\Controllers\View;
 class MyTripController extends Controller
 {
     /**
-     * Show the application dashboard.
+     * Shows information for and allows updating of a specific trip
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -51,14 +51,16 @@ class MyTripController extends Controller
         $baggage = $request->input('baggage');
         $parking = $request->input('parking');
         $other = $request->input('other');
-
-        $creationDate = now(); // Hacky solution.
+		
+		// TODO: Business begin and end dates are not displayed or updated
+		//		 Nor are the University responsible travel costs
+		//		 Need to make them viewable and updatable as well
+		
+        $updateDate = now(); // Hacky solution.
 
         $user = $request->user();
         $idKeyValue = $user->id;
-
-        // $successBool = DB::update('update trips set (user_id, destination, starting_location, start_date, end_date, reason, payer, conference, business_purpose, created_at) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-        // [$idKeyValue, $destination, $location, $start_date, $end_date, $reason, $payer, $conference, $purpose, $creationDate]);
+		
         $id = $request->input('id');
         $successBool = DB::table('trips')
                             -> where('id', $id)
@@ -74,7 +76,9 @@ class MyTripController extends Controller
                             ]);
 
         if($successBool) {
-
+		// TODO: Refactor out this email stuff and use the mail controller instead of duplicating code
+		//		 An email should also only be sent if the trip is updated
+		
         //Creation of the email information.
         $to = $request->input('email');
         $subject = "Travel Authorization Request";

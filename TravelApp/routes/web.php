@@ -38,7 +38,7 @@ Route::get('/welcome', function()
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/authorization', 'MailController@sendMail');
-Route::get('/authorization', 'TripViewController@loadPage');
+Route::get('/authorization', 'GetUserInfoController@loadPage');
 
 Route::get('/trips', 'TripListController@loadPage');
 Route::get('/mytrip', 'MyTripController@loadPage');

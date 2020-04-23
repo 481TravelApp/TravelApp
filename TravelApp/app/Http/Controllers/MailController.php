@@ -11,7 +11,7 @@ class MailController extends Controller
 {
 
     /**
-     * Show the application dashboard.
+     * Saves the inputs to the database and sends emails to relevant parties
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
